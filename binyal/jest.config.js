@@ -1,8 +1,8 @@
 module.exports = {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-    ".(css|less|scss)$": "identity-obj-proxy",
+    '.(css|less|scss)$': 'identity-obj-proxy',
   },
-  moduleFileExtensions: ["json", "js", "jsx", "ts", "tsx", "vue", "cjs"],
-  moduleDirectories: ["node_modules", "src"],
+  moduleFileExtensions: ['json', 'js', 'jsx', 'ts', 'tsx', 'vue', 'cjs'],
+  moduleDirectories: ['node_modules', 'src'],
 };
