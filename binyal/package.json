@@ -1,6 +1,6 @@
 {
   "name": "binyal",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Binyal is a template component developed on ReactJS",
   "scripts": {
     "rollup": "rollup -c",
