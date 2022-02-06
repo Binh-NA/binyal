@@ -15,6 +15,12 @@ export const HelloWorld = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 HelloWorld.args = {
   children: "Hello world!",
+  fill: true,
+  shape: Button.shape.round,
+  size: Button.size.medium,
+  style: Button.style.primary,
+  tabIndex: 1,
+  type: Button.type.button,
 };
 
 export const ClickMe = Template.bind({});
