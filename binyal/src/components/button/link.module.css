@@ -14,87 +14,87 @@
 
 /* size */
 
-.lLarge {
+.large {
   font-size: var(--by-font-size-large);
   line-height: var(--by-line-height-large);
 }
 
-.lMedium {
+.medium {
   font-size: var(--by-font-size);
   line-height: var(--by-line-height);
 }
 
-.lSmall {
+.small {
   font-size: var(--by-font-size-small);
   line-height: var(--by-line-height-small);
 }
 
 /* fill */
-.lFill {
+.fill {
   width: 100%;
 }
 
 /* shape */
-.lRound {
+.round {
   border-radius: var(--by-radius);
 }
 
-.lCircle {
+.circle {
   border-radius: var(--by-radius-round);
 }
 
 /* style */
-.lFlat,
+.flat,
 .lOutlineFlat {
   color: var(--by-comfy-9);
 }
 
-.lFlat:hover,
-.lOutlineFlat:hover {
+.flat:hover,
+.outline_flat:hover {
   color: var(--by-black);
 }
 
-.lPrimary,
-.lOutlinePrimary {
+.primary,
+.outline_primary {
   color: var(--by-binyal-color-6);
 }
 
-.lPrimary:hover,
-.lOutlinePrimary:hover {
+.primary:hover,
+.outline_primary:hover {
   color: var(--by-binyal-color-7);
 }
 
-.lWarning,
-.lOutlineWarning {
+.warning,
+.outline_warning {
   color: var(--by-yellow-5);
 }
 
-.lWarning:hover,
-.lOutlineWarning:hover {
+.warning:hover,
+.outline_warning:hover {
   color: var(--by-yellow-6);
 }
 
-.lDanger,
-.lOutlineDanger {
+.danger,
+.outline_danger {
   color: var(--by-red-6);
 }
 
-.lDanger:hover,
-.lOutlineDanger:hover {
+.danger:hover,
+.outline_danger:hover {
   color: var(--by-red-7);
 }
 
 /* outline */
 
-.lOutlineFlat,
-.lOutlinePrimary,
-.lOutlineWarning,
-.lOutlineDanger {
+.outline_flat,
+.outline_primary,
+.outline_warning,
+.outline_danger {
   text-decoration: underline;
 }
 
 /* disabled */
-a.l.lDisabled {
+a.l.disabled {
   pointer-events: none;
   opacity: 0.75;
 }

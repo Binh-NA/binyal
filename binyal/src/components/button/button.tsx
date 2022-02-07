@@ -55,48 +55,48 @@ const ButtonContent = (props: ButtonProps): React.ReactElement => {
 const configClass = {
   button: {
     size: {
-      large: buttonCss.bLarge,
-      medium: buttonCss.bMedium,
-      small: buttonCss.bSmall,
+      large: buttonCss.large,
+      medium: buttonCss.medium,
+      small: buttonCss.small,
     },
     shape: {
-      round: buttonCss.bRound,
-      circle: buttonCss.bCircle,
+      round: buttonCss.round,
+      circle: buttonCss.circle,
     },
     nonOutline: {
-      flat: buttonCss.bFlat,
-      primary: buttonCss.bPrimary,
-      warning: buttonCss.bWarning,
-      danger: buttonCss.bDanger,
+      flat: buttonCss.flat,
+      primary: buttonCss.primary,
+      warning: buttonCss.warning,
+      danger: buttonCss.danger,
     },
     outline: {
-      flat: buttonCss.bOutlineFlat,
-      primary: buttonCss.bOutlinePrimary,
-      warning: buttonCss.bOutlineWarning,
-      danger: buttonCss.bOutlineDanger,
+      flat: buttonCss.outline_flat,
+      primary: buttonCss.outline_primary,
+      warning: buttonCss.outline_warning,
+      danger: buttonCss.outline_danger,
     },
   },
   link: {
     size: {
-      large: LinkCss.lLarge,
-      medium: LinkCss.lMedium,
-      small: LinkCss.lSmall,
+      large: LinkCss.large,
+      medium: LinkCss.medium,
+      small: LinkCss.small,
     },
     shape: {
-      round: LinkCss.lRound,
-      circle: LinkCss.lCircle,
+      round: LinkCss.round,
+      circle: LinkCss.circle,
     },
     nonOutline: {
-      flat: LinkCss.lFlat,
-      primary: LinkCss.lPrimary,
-      warning: LinkCss.lWarning,
-      danger: LinkCss.lDanger,
+      flat: LinkCss.flat,
+      primary: LinkCss.primary,
+      warning: LinkCss.warning,
+      danger: LinkCss.danger,
     },
     outline: {
-      flat: LinkCss.lOutlineFlat,
-      primary: LinkCss.lOutlinePrimary,
-      warning: LinkCss.lOutlineWarning,
-      danger: LinkCss.lOutlineDanger,
+      flat: LinkCss.outline_flat,
+      primary: LinkCss.outline_primary,
+      warning: LinkCss.outline_warning,
+      danger: LinkCss.outline_danger,
     },
   },
 };
@@ -111,9 +111,9 @@ const getClass = (props: ButtonProps): string => {
       props.style ?? 'primary'
     ],
   ];
-  if (props.fill) classes.push(buttonCss.bFill);
+  if (props.fill) classes.push(buttonCss.fill);
   if (props.className) classes.push(props.className);
-  if (type === 'link' && props.disabled) classes.push(LinkCss.lDisabled);
+  if (type === 'link' && props.disabled) classes.push(LinkCss.disabled);
   return classes.join(' ');
 };
 
