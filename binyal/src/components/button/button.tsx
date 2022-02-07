@@ -3,7 +3,8 @@ import buttonCss from './button.module.css';
 import LinkCss from './link.module.css';
 import { Size, SIZE } from '../../common/size';
 import { Style, STYLE } from '../../common/style';
-import { SpaceX } from '../space/space';
+import Space from '../space/space';
+('../space');
 import Loading from '../loading';
 
 type ButtonType = 'button' | 'submit' | 'reset';
@@ -43,7 +44,7 @@ const ButtonContent = (props: ButtonProps): React.ReactElement => {
     <>
       {props.icon && <span>{props.icon}</span>}
       {props.icon && props.children && (
-        <SpaceX size={spaceSize[props.size ?? 'medium']} />
+        <Space.SpaceX size={spaceSize[props.size ?? 'medium']} />
       )}
       {props.children && <span>{props.children}</span>}
       {props.loading && <Loading style={props.style} />}
