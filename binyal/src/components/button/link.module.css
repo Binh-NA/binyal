@@ -1,0 +1,100 @@
+.l {
+  display: inline-block;
+  position: relative;
+  font-weight: var(--by-font-weight-button);
+  white-space: nowrap;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  border: none;
+  text-decoration: none;
+  background-color: var(--by-transparent);
+}
+
+/* size */
+
+.lLarge {
+  font-size: var(--by-font-size-large);
+  line-height: var(--by-line-height-large);
+}
+
+.lMedium {
+  font-size: var(--by-font-size);
+  line-height: var(--by-line-height);
+}
+
+.lSmall {
+  font-size: var(--by-font-size-small);
+  line-height: var(--by-line-height-small);
+}
+
+/* fill */
+.lFill {
+  width: 100%;
+}
+
+/* shape */
+.lRound {
+  border-radius: var(--by-radius);
+}
+
+.lCircle {
+  border-radius: var(--by-radius-round);
+}
+
+/* style */
+.lFlat,
+.lOutlineFlat {
+  color: var(--by-comfy-9);
+}
+
+.lFlat:hover,
+.lOutlineFlat:hover {
+  color: var(--by-black);
+}
+
+.lPrimary,
+.lOutlinePrimary {
+  color: var(--by-binyal-color-6);
+}
+
+.lPrimary:hover,
+.lOutlinePrimary:hover {
+  color: var(--by-binyal-color-7);
+}
+
+.lWarning,
+.lOutlineWarning {
+  color: var(--by-yellow-5);
+}
+
+.lWarning:hover,
+.lOutlineWarning:hover {
+  color: var(--by-yellow-6);
+}
+
+.lDanger,
+.lOutlineDanger {
+  color: var(--by-red-6);
+}
+
+.lDanger:hover,
+.lOutlineDanger:hover {
+  color: var(--by-red-7);
+}
+
+/* outline */
+
+.lOutlineFlat,
+.lOutlinePrimary,
+.lOutlineWarning,
+.lOutlineDanger {
+  text-decoration: underline;
+}
+
+/* disabled */
+a.l.lDisabled {
+  pointer-events: none;
+  opacity: 0.75;
+}
