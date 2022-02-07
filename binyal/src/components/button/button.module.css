@@ -16,18 +16,21 @@
   font-size: var(--by-font-size-large);
   line-height: var(--by-line-height-large);
   height: var(--by-height-large);
+  padding: 8px 16px;
 }
 
 .bMedium {
   font-size: var(--by-font-size);
   line-height: var(--by-line-height);
   height: var(--by-height-medium);
+  padding: 6px 12px;
 }
 
 .bSmall {
   font-size: var(--by-font-size-small);
   line-height: var(--by-line-height-small);
   height: var(--by-height-small);
+  padding: 4px 8px;
 }
 
 /* fill */
@@ -130,4 +133,10 @@
 .bOutlineDanger:hover {
   background-color: var(--by-red-6);
   color: var(--by-white);
+}
+
+/* disabled */
+button.b:disabled {
+  pointer-events: none;
+  opacity: 0.75;
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 import buttonCss from './button.module.css';
+import LinkCss from './link.module.css';
 import { Size, SIZE } from '../../common/size';
 import { Style, STYLE } from '../../common/style';
 import { SpaceX } from '../space/space';
+import Loading from '../loading';
 
 type ButtonType = 'button' | 'submit' | 'reset';
 type ButtonShape = 'round' | 'circle';
@@ -44,45 +46,73 @@ const ButtonContent = (props: ButtonProps): React.ReactElement => {
         <SpaceX size={spaceSize[props.size ?? 'medium']} />
       )}
       {props.children && <span>{props.children}</span>}
+      {props.loading && <Loading style={props.style} />}
     </>
   );
 };
 
 const configClass = {
-  size: {
-    large: buttonCss.bLarge,
-    medium: buttonCss.bMedium,
-    small: buttonCss.bSmall,
+  button: {
+    size: {
+      large: buttonCss.bLarge,
+      medium: buttonCss.bMedium,
+      small: buttonCss.bSmall,
+    },
+    shape: {
+      round: buttonCss.bRound,
+      circle: buttonCss.bCircle,
+    },
+    nonOutline: {
+      flat: buttonCss.bFlat,
+      primary: buttonCss.bPrimary,
+      warning: buttonCss.bWarning,
+      danger: buttonCss.bDanger,
+    },
+    outline: {
+      flat: buttonCss.bOutlineFlat,
+      primary: buttonCss.bOutlinePrimary,
+      warning: buttonCss.bOutlineWarning,
+      danger: buttonCss.bOutlineDanger,
+    },
   },
-  shape: {
-    round: buttonCss.bRound,
-    circle: buttonCss.bCircle,
-  },
-  nonOutline: {
-    flat: buttonCss.bFlat,
-    primary: buttonCss.bPrimary,
-    warning: buttonCss.bWarning,
-    danger: buttonCss.bDanger,
-  },
-  outline: {
-    flat: buttonCss.bOutlineFlat,
-    primary: buttonCss.bOutlinePrimary,
-    warning: buttonCss.bOutlineWarning,
-    danger: buttonCss.bOutlineDanger,
+  link: {
+    size: {
+      large: LinkCss.lLarge,
+      medium: LinkCss.lMedium,
+      small: LinkCss.lSmall,
+    },
+    shape: {
+      round: LinkCss.lRound,
+      circle: LinkCss.lCircle,
+    },
+    nonOutline: {
+      flat: LinkCss.lFlat,
+      primary: LinkCss.lPrimary,
+      warning: LinkCss.lWarning,
+      danger: LinkCss.lDanger,
+    },
+    outline: {
+      flat: LinkCss.lOutlineFlat,
+      primary: LinkCss.lOutlinePrimary,
+      warning: LinkCss.lOutlineWarning,
+      danger: LinkCss.lOutlineDanger,
+    },
   },
 };
 
 const getClass = (props: ButtonProps): string => {
+  const type = props.href ? 'link' : 'button';
   const classes: string[] = [
-    buttonCss.b,
-    configClass.size[props.size ?? 'medium'],
-    configClass.shape[props.shape ?? 'round'],
-    configClass[props.outline ? 'outline' : 'nonOutline'][
+    type === 'link' ? LinkCss.l : buttonCss.b,
+    configClass[type].size[props.size ?? 'medium'],
+    configClass[type].shape[props.shape ?? 'round'],
+    configClass[type][props.outline ? 'outline' : 'nonOutline'][
       props.style ?? 'primary'
     ],
   ];
   if (props.fill) classes.push(buttonCss.bFill);
-  console.log(classes);
+  if (props.className) classes.push(props.className);
+  if (type === 'link' && props.disabled) classes.push(LinkCss.lDisabled);
   return classes.join(' ');
 };
 
