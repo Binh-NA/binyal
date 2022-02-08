@@ -1,6 +1,6 @@
 {
   "name": "binyal",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Binyal is a template component developed on ReactJS",
   "scripts": {
     "rollup": "rollup -c",
@@ -59,6 +59,7 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "@Binh-NA:registry": "https://npm.pkg.github.com"
+    "@Binh-NA:registry": "https://npm.pkg.github.com",
+    "name": "@Binh-NA/binyal-npm"
   }
 }
