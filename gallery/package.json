@@ -4,7 +4,7 @@
   "description": "Binyal is a template component developed on ReactJS",
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "build-storybook"
+    "build": "build-storybook --output-dir ../docs"
   },
   "keywords": [
     "binyal"
