@@ -25,14 +25,19 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: check binyal
+      - name: check binyal 🛎️
         run: |
           cd ./binyal
           npm install
           npm run test
           npm run format
-      - name: check build storybook
+      - name: build storybook 🔧
         run: |
           cd ./gallery
           npm install
           npm run build
+      - name: deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          branch: release # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
