@@ -39,5 +39,5 @@ jobs:
       - name: deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
-          branch: release # The branch the action should deploy to.
-          folder: ./docs # The folder the action should deploy.
+          branch: release
+          folder: ./docs
