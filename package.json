@@ -1,7 +1,7 @@
 {
-  "name": "binyal",
+  "name": "@binh-na/binyal",
   "version": "0.0.1",
-  "description": "binyal",
+  "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "main": "index.js",
   "dependencies": {
     "eslint-config-prettier": "8.3.0"
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "dev": "cd ./gallery & npm run dev",
     "build": "cd ./gallery & npm run build"
   },
   "repository": {
@@ -20,12 +21,16 @@
     "url": "git+https://github.com/Binh-NA/binyal.git"
   },
   "publishConfig": {
-    "@Binh-NA:registry": "https://npm.pkg.github.com/Binh-NA"
+    "registry": "https://npm.pkg.github.com/Binh-NA",
+    "name": "@Binh-NA/binyal"
   },
   "keywords": [
     "binyal"
   ],
-  "author": "Binh-NA",
+  "author": {
+    "name": "Binh-NA",
+    "email": "nguyenanbinh10a13@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Binh-NA/binyal/issues"
