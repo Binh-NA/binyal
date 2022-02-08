@@ -1,5 +1,5 @@
 {
-  "name": "@binh-na/binyal",
+  "name": "binyal",
   "version": "0.0.11",
   "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Binh-NA/binyal"
+    "url": "https://github.com/Binh-NA/binyal.git"
   },
   "author": {
     "name": "Binh-NA",
