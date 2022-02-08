@@ -25,8 +25,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: npm install, build and test
+      - name: check binyal
         run: |
-          npm --prefix ./binyal install ./binyal
-          npm --prefix ./binyal run test
-          npm --prefix ./binyal run format
+          cd ./binyal
+          npm install
+          npm run test
+          npm run format
+      - name: check build storybook
+        run: |
+          cd ../gallery
+          npm install
+          npm run build
