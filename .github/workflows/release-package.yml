@@ -39,6 +39,5 @@ jobs:
       - name: deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
-          branch: release
-          folder: ~/docs
-          target-folder: ~/docs
+          branch: build
+          folder: docs
