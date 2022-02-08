@@ -19,6 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/Binh-NA/binyal.git"
   },
+  "publishConfig": {
+    "@Binh-NA:registry": "https://npm.pkg.github.com/Binh-NA"
+  },
   "keywords": [
     "binyal"
   ],
