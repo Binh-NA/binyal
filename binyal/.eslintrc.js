@@ -25,4 +25,9 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     // '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };
