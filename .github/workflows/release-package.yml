@@ -33,6 +33,6 @@ jobs:
           npm run format
       - name: check build storybook
         run: |
-          cd ../gallery
+          cd ./gallery
           npm install
           npm run build
