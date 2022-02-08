@@ -1,0 +1,71 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Binyal/Introduction" />
+
+<style>{`
+  .by-container {
+    color: #1e293b;
+    font-size: 18px;
+  }
+  .by-header {
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    color: #db2777;
+  }
+  .by-des {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .by-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 24px;
+    width: 100%;
+    padding: 24px;
+    max-width: 1024px;
+    float-left: auto;
+    float-right: auto;
+  }
+  .by-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px dashed #f8fafc;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);-o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .by-card:hover {
+    border: 1px dashed #e2e8f0;
+    background-color: white;
+  }
+  .by-card span {
+    font-size: 24px;
+    padding: 32px 0px;
+  }
+`}</style>
+
+<div className="by-container">
+  <h1 className="by-header">Binyal</h1>
+  <p className="by-des">
+    Design components for developers. Create an efficient and enjoyable work
+    experience
+  </p>
+  <div className="by-group">
+    <div className="by-card">
+      <span>Efficient</span>
+    </div>
+    <div className="by-card">
+      <span>Simple</span>
+    </div>
+    <div className="by-card">
+      <span>Enjoyable</span>
+    </div>
+    <div className="by-card">
+      <span>Job Performance</span>
+    </div>
+  </div>
+</div>
