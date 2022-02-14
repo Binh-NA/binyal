@@ -1,3 +1,6 @@
+import Space from './space';
+
 export { default as Button } from './button';
 export { default as Loading } from './loading';
-export { default as Space } from './space';
+export const SpaceX = Space.SpaceX;
+export const SpaceY = Space.SpaceY;
