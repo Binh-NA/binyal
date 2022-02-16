@@ -1,5 +1,7 @@
 .b {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   font-weight: var(--by-font-weight-button);
   white-space: nowrap;
@@ -16,21 +18,49 @@
   font-size: var(--by-font-size-large);
   line-height: var(--by-line-height-large);
   height: var(--by-height-large);
-  padding: 8px 16px;
+  padding: var(--by-padding-large-y) var(--by-padding-large-x);
+}
+
+.large .icon,
+.large .icon svg {
+  width: var(--by-icon-large);
+}
+
+.large .icon svg {
+  max-height: var(--by-icon-large);
+  height: auto;
 }
 
 .medium {
   font-size: var(--by-font-size);
   line-height: var(--by-line-height);
   height: var(--by-height-medium);
-  padding: 6px 12px;
+  padding: var(--by-padding-medium-y) var(--by-padding-medium-x);
+}
+
+.medium .icon,
+.medium .icon svg {
+  width: var(--by-icon-medium);
+}
+.medium .icon svg {
+  max-height: var(--by-icon-medium);
+  height: auto;
 }
 
 .small {
   font-size: var(--by-font-size-small);
   line-height: var(--by-line-height-small);
   height: var(--by-height-small);
-  padding: 4px 8px;
+  padding: var(--by-padding-small-y) var(--by-padding-small-x);
+}
+
+.small .icon,
+.small .icon svg {
+  width: var(--by-icon-small);
+}
+.small .icon svg {
+  max-height: var(--by-icon-small);
+  height: auto;
 }
 
 /* fill */

@@ -79,6 +79,17 @@
 
   --by-tab-size: 4;
   --by-font-weight-button: 400;
+
+  --by-padding-large-x: 16px;
+  --by-padding-large-y: 8px;
+  --by-padding-medium-x: 12px;
+  --by-padding-medium-y: 6px;
+  --by-padding-small-x: 8px;
+  --by-padding-small-y: 4px;
+
+  --by-icon-large: 24px;
+  --by-icon-medium: 20px;
+  --by-icon-small: 16px;
 }
 
 p,
