@@ -199,6 +199,34 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Simple = Template.bind({});
 Simple.args = {
   value: "I'm Binyal",
+};
+
+export const IconLeft = Template.bind({});
+IconLeft.args = {
+  value: "I'm Binyal",
   iconLeft: <FontAwesomeIcon icon={faRobot} />,
-  iconRight: <FontAwesomeIcon icon={faMoneyCheck} />,
+};
+
+export const IconRight = Template.bind({});
+IconRight.args = {
+  value: "I'm Binyal",
+  iconRight: <FontAwesomeIcon icon={faRobot} />,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  value: "I'm Binyal",
+  disabled: true,
+};
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+  value: "I'm Binyal",
+  readOnly: true,
+};
+
+export const Fill = Template.bind({});
+Fill.args = {
+  value: "I'm Binyal",
+  fill: true,
 };
