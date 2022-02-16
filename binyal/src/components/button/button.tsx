@@ -1,16 +1,16 @@
 import React from 'react';
 import buttonCss from './button.module.css';
 import LinkCss from './link.module.css';
-import { Size, SIZE } from '../../common/size';
-import { Style, STYLE } from '../../common/style';
+import { ByElement } from '../../common/by-element';
 import { SpaceX } from '../space/space';
 ('../space');
 import Loading from '../loading';
+import { Size } from '../../common/size';
 
 type ButtonType = 'button' | 'submit' | 'reset';
 type ButtonShape = 'round' | 'circle';
 
-export interface ButtonProps {
+export interface ButtonProps extends ByElement {
   // properties
   className?: string;
   type?: ButtonType;
@@ -24,8 +24,6 @@ export interface ButtonProps {
   href?: string;
   target?: string;
   // css
-  size?: Size;
-  style?: Style;
   fill?: boolean;
   shape?: ButtonShape;
   outline?: boolean;
@@ -42,7 +40,7 @@ const spaceSize: Record<Size, number> = {
 const ButtonContent = (props: ButtonProps): React.ReactElement => {
   return (
     <>
-      {props.icon && <span>{props.icon}</span>}
+      {props.icon && <span className={buttonCss.icon}>{props.icon}</span>}
       {props.icon && props.children && (
         <SpaceX size={spaceSize[props.size ?? 'medium']} />
       )}
@@ -112,8 +110,8 @@ const getClass = (props: ButtonProps): string => {
     ],
   ];
   if (props.fill) classes.push(buttonCss.fill);
-  if (props.className) classes.push(props.className);
   if (type === 'link' && props.disabled) classes.push(LinkCss.disabled);
+  if (props.className) classes.push(props.className);
   return classes.join(' ');
 };
 
@@ -139,8 +137,8 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-Button.size = SIZE;
-Button.style = STYLE;
+Button.size = ByElement.size;
+Button.style = ByElement.style;
 Button.type = {
   button: 'button' as ButtonType,
   reset: 'reset' as ButtonType,
