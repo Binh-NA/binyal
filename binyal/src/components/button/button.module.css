@@ -12,6 +12,12 @@
   border: 1px solid var(--by-transparent);
 }
 
+.b .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* size */
 
 .large {
