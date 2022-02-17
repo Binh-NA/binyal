@@ -1,6 +1,6 @@
 {
   "name": "binyal",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "scripts": {
     "rollup": "rollup -c",

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Input from "../../../../binyal/src/components/input/input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRobot, faMoneyCheck } from "@fortawesome/free-solid-svg-icons";
+import { faRobot } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   title: "Components/Input",
@@ -198,35 +198,35 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Simple = Template.bind({});
 Simple.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
 };
 
 export const IconLeft = Template.bind({});
 IconLeft.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
   iconLeft: <FontAwesomeIcon icon={faRobot} />,
 };
 
 export const IconRight = Template.bind({});
 IconRight.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
   iconRight: <FontAwesomeIcon icon={faRobot} />,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
   disabled: true,
 };
 
 export const ReadOnly = Template.bind({});
 ReadOnly.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
   readOnly: true,
 };
 
 export const Fill = Template.bind({});
 Fill.args = {
-  value: "I'm Binyal",
+  defaultValue: "I'm Binyal",
   fill: true,
 };

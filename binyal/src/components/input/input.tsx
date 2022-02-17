@@ -1,5 +1,5 @@
 import React from 'react';
-import { ByElement } from '../../common/by-element';
+import { ByElement, withStaticProps } from '../../common/by-element';
 import Loading from '../loading';
 import InputCss from './input.module.css';
 
@@ -45,6 +45,36 @@ export interface InputProps extends ByElement {
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
 }
 
+const __STATIC = {
+  type: {
+    email: 'email' as InputType,
+    hidden: 'hidden' as InputType,
+    number: 'number' as InputType,
+    password: 'password' as InputType,
+    search: 'search' as InputType,
+    text: 'text' as InputType,
+    url: 'url' as InputType,
+  },
+  autoComplete: {
+    on: 'on' as InputAutoComplete,
+    off: 'off' as InputAutoComplete,
+  },
+};
+
+export interface InputStaticProps {
+  size: typeof ByElement.size;
+  style: typeof ByElement.style;
+  type: typeof __STATIC.type;
+  shape: typeof __STATIC.autoComplete;
+}
+
+const __STATIC_PROPS: InputStaticProps = {
+  size: ByElement.size,
+  style: ByElement.style,
+  type: __STATIC.type,
+  shape: __STATIC.autoComplete,
+};
+
 const configContentClass = {
   size: {
     large: InputCss.content_large,
@@ -89,15 +119,16 @@ const getClass = (props: InputProps): string => {
   return classes.join(' ');
 };
 
-const InputContent = (props: InputProps): React.ReactElement => {
+const InputContent = (
+  props: InputProps,
+  ref?: React.ForwardedRef<HTMLInputElement>,
+): React.ReactElement => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     if (e && e.target) props?.setValue?.(e.target.value);
     props?.onChange?.(e);
   };
 
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    e.preventDefault();
     const code = e.keyCode || e.which;
     if (code === 13) props?.onEnter?.(e);
     props?.onKeyPress?.(e);
@@ -105,6 +136,7 @@ const InputContent = (props: InputProps): React.ReactElement => {
 
   return (
     <input
+      ref={ref}
       id={props.id}
       name={props.name}
       className={getClass(props)}
@@ -128,38 +160,76 @@ const InputContent = (props: InputProps): React.ReactElement => {
   );
 };
 
-export const Input = (props: InputProps): React.ReactElement => {
-  const isSign = !(props.loading || props.iconLeft || props.iconRight);
-  return isSign ? (
-    <InputContent {...props} />
-  ) : (
+const InputContentRef = React.forwardRef<HTMLInputElement, InputProps>(
+  InputContent,
+);
+
+const IconContainer = (props: {
+  children: React.ReactNode;
+  isRight?: boolean;
+  onClick: () => void;
+}): React.ReactElement => (
+  <span
+    className={props.isRight ? InputCss.icon_right : InputCss.icon_left}
+    role="button"
+    onClick={() => props.onClick()}
+  >
+    {props.children}
+  </span>
+);
+
+const InputContainer = (
+  props: InputProps,
+  ref?: React.ForwardedRef<HTMLInputElement>,
+): React.ReactElement => {
+  const iRef = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (typeof ref === 'function') {
+      ref(iRef.current);
+    } else if (ref) {
+      ref.current = iRef.current;
+    }
+  }, [ref, iRef]);
+
+  return (
     <div className={getContentClass(props)}>
-      <InputContent {...props} />
+      <InputContentRef ref={iRef} {...props} />
       {props.iconLeft && (
-        <span className={InputCss.icon_left}>{props.iconLeft}</span>
+        <IconContainer onClick={() => iRef.current?.focus()}>
+          {props.iconLeft}
+        </IconContainer>
       )}
       {props.iconRight && (
-        <span className={InputCss.icon_right}>{props.iconRight}</span>
+        <IconContainer isRight onClick={() => iRef.current?.focus()}>
+          {props.iconRight}
+        </IconContainer>
       )}
       {props.loading && <Loading style={props.style} />}
     </div>
   );
 };
 
-Input.size = ByElement.size;
-Input.style = ByElement.style;
-Input.type = {
-  email: 'email' as InputType,
-  hidden: 'hidden' as InputType,
-  number: 'number' as InputType,
-  password: 'password' as InputType,
-  search: 'search' as InputType,
-  text: 'text' as InputType,
-  url: 'url' as InputType,
+const InputContainerRef = React.forwardRef<HTMLInputElement, InputProps>(
+  InputContainer,
+);
+
+export const InputRef = (
+  props: InputProps,
+  ref?: React.ForwardedRef<HTMLInputElement>,
+): React.ReactElement => {
+  const isSign = !(props.loading || props.iconLeft || props.iconRight);
+
+  return isSign ? (
+    <InputContentRef ref={ref} {...props} />
+  ) : (
+    <InputContainerRef ref={ref} {...props} />
+  );
 };
-Input.autoComplete = {
-  on: 'on' as InputAutoComplete,
-  off: 'off' as InputAutoComplete,
-};
+
+const Input = withStaticProps<InputStaticProps, InputProps, HTMLInputElement>(
+  React.forwardRef<HTMLInputElement, InputProps>(InputRef),
+  __STATIC_PROPS,
+);
 
 export default Input;

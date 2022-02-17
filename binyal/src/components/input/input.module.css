@@ -3,6 +3,10 @@
   display: inline-block;
 }
 
+.content .i {
+  width: 100%;
+}
+
 .i {
   display: inline-block;
   position: relative;

@@ -1,7 +1,7 @@
 import React from 'react';
 import buttonCss from './button.module.css';
 import LinkCss from './link.module.css';
-import { ByElement } from '../../common/by-element';
+import { ByElement, withStaticProps } from '../../common/by-element';
 import { SpaceX } from '../space/space';
 ('../space');
 import Loading from '../loading';
@@ -30,6 +30,32 @@ export interface ButtonProps extends ByElement {
   // events
   onClick?: React.MouseEventHandler;
 }
+
+const __STATIC = {
+  type: {
+    button: 'button' as ButtonType,
+    reset: 'reset' as ButtonType,
+    submit: 'submit' as ButtonType,
+  },
+  shape: {
+    round: 'round' as ButtonShape,
+    circle: 'circle' as ButtonShape,
+  },
+};
+
+export interface ButtonStaticProps {
+  size: typeof ByElement.size;
+  style: typeof ByElement.style;
+  type: typeof __STATIC.type;
+  shape: typeof __STATIC.shape;
+}
+
+const __STATIC_PROPS: ButtonStaticProps = {
+  size: ByElement.size,
+  style: ByElement.style,
+  type: __STATIC.type,
+  shape: __STATIC.shape,
+};
 
 const spaceSize: Record<Size, number> = {
   large: 6,
@@ -115,9 +141,13 @@ const getClass = (props: ButtonProps): string => {
   return classes.join(' ');
 };
 
-const Button = (props: ButtonProps) => {
+const ButtonRef = (
+  props: ButtonProps,
+  ref?: React.ForwardedRef<HTMLButtonElement | HTMLAnchorElement>,
+) => {
   return props.href ? (
     <a
+      ref={ref as React.ForwardedRef<HTMLAnchorElement>}
       className={getClass(props)}
       href={props.href}
       target={props.target ?? '_self'}
@@ -126,6 +156,7 @@ const Button = (props: ButtonProps) => {
     </a>
   ) : (
     <button
+      ref={ref as React.ForwardedRef<HTMLButtonElement>}
       className={getClass(props)}
       type={props.type}
       disabled={props.disabled}
@@ -137,16 +168,15 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-Button.size = ByElement.size;
-Button.style = ByElement.style;
-Button.type = {
-  button: 'button' as ButtonType,
-  reset: 'reset' as ButtonType,
-  submit: 'submit' as ButtonType,
-};
-Button.shape = {
-  round: 'round' as ButtonShape,
-  circle: 'circle' as ButtonShape,
-};
+const Button = withStaticProps<
+  ButtonStaticProps,
+  ButtonProps,
+  HTMLButtonElement | HTMLAnchorElement
+>(
+  React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+    ButtonRef,
+  ),
+  __STATIC_PROPS,
+);
 
 export default Button;
