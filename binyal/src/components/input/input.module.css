@@ -9,6 +9,7 @@
 
 .i {
   display: inline-block;
+  align-self: flex-start;
   position: relative;
   font-weight: var(--by-font-weight-button);
   white-space: nowrap;
