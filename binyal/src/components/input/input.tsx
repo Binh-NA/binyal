@@ -1,7 +1,12 @@
 import React from 'react';
-import { ByElement, withStaticProps } from '../../common/by-element';
+import {
+  ByElement,
+  AutoComplete,
+  withStaticProps,
+} from '../../common/by-element';
 import Loading from '../loading';
 import InputCss from './input.module.css';
+import { useRefElement } from '../../hooks/ref';
 
 type InputType =
   | 'email'
@@ -11,7 +16,6 @@ type InputType =
   | 'search'
   | 'text'
   | 'url';
-type InputAutoComplete = 'on' | 'off';
 
 export interface InputProps extends ByElement {
   // properties
@@ -24,7 +28,7 @@ export interface InputProps extends ByElement {
   maxLength?: number;
   minLength?: number;
   autoFocus?: boolean;
-  autoComplete?: InputAutoComplete;
+  autoComplete?: AutoComplete;
   placeholder?: string;
   readOnly?: boolean;
   required?: boolean;
@@ -55,24 +59,20 @@ const __STATIC = {
     text: 'text' as InputType,
     url: 'url' as InputType,
   },
-  autoComplete: {
-    on: 'on' as InputAutoComplete,
-    off: 'off' as InputAutoComplete,
-  },
 };
 
 export interface InputStaticProps {
   size: typeof ByElement.size;
   style: typeof ByElement.style;
   type: typeof __STATIC.type;
-  shape: typeof __STATIC.autoComplete;
+  shape: typeof ByElement.autoComplete;
 }
 
 const __STATIC_PROPS: InputStaticProps = {
   size: ByElement.size,
   style: ByElement.style,
   type: __STATIC.type,
-  shape: __STATIC.autoComplete,
+  shape: ByElement.autoComplete,
 };
 
 const configContentClass = {
@@ -182,15 +182,7 @@ const InputContainer = (
   props: InputProps,
   ref?: React.ForwardedRef<HTMLInputElement>,
 ): React.ReactElement => {
-  const iRef = React.useRef<HTMLInputElement>(null);
-
-  React.useEffect(() => {
-    if (typeof ref === 'function') {
-      ref(iRef.current);
-    } else if (ref) {
-      ref.current = iRef.current;
-    }
-  }, [ref, iRef]);
+  const iRef = useRefElement<HTMLInputElement>(ref);
 
   return (
     <div className={getContentClass(props)}>
