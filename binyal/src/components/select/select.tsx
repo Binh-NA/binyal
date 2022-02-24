@@ -1,5 +1,9 @@
 import React from 'react';
-import { ByElement, AutoComplete } from '../../common/by-element';
+import {
+  ByElement,
+  AutoComplete,
+  withStaticProps,
+} from '../../common/by-element';
 import Loading from '../loading';
 import SelectCss from './select.module.css';
 import Icon from '../icon';
@@ -17,7 +21,7 @@ export interface SelectProps<T> extends ByElement {
   tabIndex?: number;
   autoFocus?: boolean;
   autoComplete?: AutoComplete;
-  placeholder?: string; //
+  placeholder?: string;
   required?: boolean;
   value?: T;
   //content
@@ -31,6 +35,18 @@ export interface SelectProps<T> extends ByElement {
   onBlur?: React.FocusEventHandler<HTMLElement>;
   onFocus?: React.FocusEventHandler<HTMLElement>;
 }
+
+export interface SelectStaticProps {
+  size: typeof ByElement.size;
+  style: typeof ByElement.style;
+  autoComplete: typeof ByElement.autoComplete;
+}
+
+const __STATIC_PROPS: SelectStaticProps = {
+  size: ByElement.size,
+  style: ByElement.style,
+  autoComplete: ByElement.autoComplete,
+};
 
 const configContentClass = {
   size: {
@@ -60,6 +76,8 @@ const getContentClass = <T,>(props: SelectProps<T>): string => {
     configContentClass.size[props.size ?? 'medium'],
   ];
   if (props.fill) classes.push(SelectCss.fill);
+  if (props.loading) classes.push(SelectCss.c_loading);
+  if (props.disabled) classes.push(SelectCss.c_disable);
   return classes.join(' ');
 };
 
@@ -142,6 +160,10 @@ const SelectContainer = <T,>(
     customChange(undefined);
   };
 
+  const labelValue = React.useMemo(() => {
+    return props.options.find((item) => item.value === value)?.name;
+  }, [value, props.options]);
+
   return (
     <div className={getContentClass(props)} tabIndex={props.tabIndex}>
       <SelectContent {...props} forwardRef={sRef} value={value} />
@@ -154,8 +176,8 @@ const SelectContainer = <T,>(
         onBlur={props.onBlur}
         tabIndex={1}
       >
-        <span className={value ? '' : SelectCss.p}>
-          {value || props.placeholder || 'Select'}
+        <span className={labelValue ? '' : SelectCss.p}>
+          {labelValue || props.placeholder || 'Select'}
         </span>
         <span className={SelectCss.appearance}>
           <Icon symbol="arrowDown" />
@@ -180,7 +202,15 @@ const SelectContainer = <T,>(
   );
 };
 
-export default React.forwardRef<
-  HTMLSelectElement,
-  SelectProps<string | number | boolean>
->(SelectContainer);
+const Select = withStaticProps<
+  SelectStaticProps,
+  SelectProps<string | number | boolean>,
+  HTMLSelectElement
+>(
+  React.forwardRef<HTMLSelectElement, SelectProps<string | number | boolean>>(
+    SelectContainer,
+  ),
+  __STATIC_PROPS,
+);
+
+export default Select;

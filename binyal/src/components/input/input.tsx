@@ -65,14 +65,14 @@ export interface InputStaticProps {
   size: typeof ByElement.size;
   style: typeof ByElement.style;
   type: typeof __STATIC.type;
-  shape: typeof ByElement.autoComplete;
+  autoComplete: typeof ByElement.autoComplete;
 }
 
 const __STATIC_PROPS: InputStaticProps = {
   size: ByElement.size,
   style: ByElement.style,
   type: __STATIC.type,
-  shape: ByElement.autoComplete,
+  autoComplete: ByElement.autoComplete,
 };
 
 const configContentClass = {

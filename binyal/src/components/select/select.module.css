@@ -105,6 +105,20 @@
   color: var(--by-yellow-4);
 }
 
+.warning .appearance svg,
+.show.warning .appearance svg,
+.content .warning + .close svg {
+  color: var(--by-yellow-4);
+}
+
+.content .warning .p {
+  color: var(--by-yellow-2);
+}
+
+.content .warning + .close:hover svg {
+  color: var(--by-yellow-5);
+}
+
 .warning:hover,
 .content:hover .warning {
   box-shadow: 0 0 0 1px var(--by-yellow-1);
@@ -127,6 +141,20 @@
 
 .danger:focus {
   box-shadow: 0 0 0 2px var(--by-red-3);
+}
+
+.danger .appearance svg,
+.show.danger .appearance svg,
+.content .danger + .close svg {
+  color: var(--by-red-6);
+}
+
+.content .danger .p {
+  color: var(--by-red-4);
+}
+
+.content .danger + .close:hover svg {
+  color: var(--by-red-7);
 }
 
 /* disabled */
@@ -261,4 +289,14 @@ select.s:disabled {
 
 .container .o:first-child {
   border-radius: var(--by-radius) var(--by-radius) 0px 0px;
+}
+
+/* loading */
+.c_loading {
+  pointer-events: none;
+}
+
+.c_disable {
+  pointer-events: none;
+  opacity: 0.75;
 }

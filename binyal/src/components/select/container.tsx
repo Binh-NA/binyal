@@ -20,7 +20,7 @@ export const Container = <T,>(props: ContainerProps<T>): React.ReactElement => {
   });
 
   return (
-    <RefContainer pRef={props.pRef}>
+    <RefContainer pRef={props.pRef} isShadow>
       <div ref={dRef} className={Css.container}>
         {props.options.map((item) => (
           <Option<T>

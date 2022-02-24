@@ -1,6 +1,7 @@
 import React from 'react';
 import Css from './ref-container.module.css';
 import { Portal } from './index';
+import { useScroll } from '../../hooks/scroll';
 
 interface Position {
   x: number;
@@ -23,13 +24,16 @@ const __Z_INDEX = 1996;
 export interface RefContainer<T extends HTMLElement> {
   pRef: React.RefObject<T>;
   children: React.ReactChild;
+  isShadow?: boolean;
 }
 
 export const RefContainer = <T extends HTMLElement>(
   props: RefContainer<T>,
 ): React.ReactElement => {
-  const position = React.useMemo(() => {
-    const parentPosition = props.pRef.current?.getBoundingClientRect();
+  const [position, setPosition] = React.useState<Position>();
+
+  const getPosition = (ref: React.RefObject<T>): Position | undefined => {
+    const parentPosition = ref.current?.getBoundingClientRect();
     if (!parentPosition) return;
     const x = parentPosition.x,
       w = parentPosition.width;
@@ -50,7 +54,13 @@ export const RefContainer = <T extends HTMLElement>(
       w,
       isTop,
     };
-  }, [props.pRef]);
+  };
+
+  React.useEffect(() => {
+    setPosition(getPosition(props.pRef));
+  }, []);
+
+  useScroll(() => setPosition(getPosition(props.pRef)), [props.pRef]);
 
   const style: React.CSSProperties = {
     maxHeight: position?.h,
@@ -60,14 +70,17 @@ export const RefContainer = <T extends HTMLElement>(
   };
 
   if (position?.isTop) {
-    style.bottom = position?.y;
+    style.bottom = position?.y + 2;
   } else {
     style.top = position?.y;
   }
 
+  const classes = [Css.c, Css.scroll_vertical];
+  if (props.isShadow) classes.push(Css.c_shadow);
+
   return (
     <Portal>
-      <div className={Css.c} style={style}>
+      <div className={classes.join(' ')} style={style}>
         {props.children}
       </div>
     </Portal>
