@@ -1,0 +1,302 @@
+.content {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.content select {
+  display: none;
+}
+
+.content .s {
+  width: 100%;
+}
+
+.s {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  position: relative;
+  font-weight: var(--by-font-weight-button);
+  white-space: nowrap;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  border: 1px solid var(--by-transparent);
+  border-radius: var(--by-radius);
+  border: 1px solid var(--by-gray-1);
+  color: var(--by-comfy-9);
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+
+.s::-ms-expand {
+  display: none;
+}
+
+/* size */
+
+.large {
+  font-size: var(--by-font-size-large);
+  line-height: var(--by-line-height-large);
+  height: var(--by-height-large);
+  padding: var(--by-padding-large-y)
+    calc(var(--by-padding-large-x) * 2.5 + var(--by-select-large-icon) * 2)
+    var(--by-padding-large-y) var(--by-padding-large-x);
+}
+
+.medium {
+  font-size: var(--by-font-size);
+  line-height: var(--by-line-height);
+  height: var(--by-height-medium);
+  padding: var(--by-padding-medium-y)
+    calc(var(--by-padding-medium-x) * 2.5 + var(--by-select-medium-icon) * 2)
+    var(--by-padding-medium-y) var(--by-padding-medium-x);
+}
+
+.small {
+  font-size: var(--by-font-size-small);
+  line-height: var(--by-line-height-small);
+  height: var(--by-height-small);
+  padding: var(--by-padding-small-y)
+    calc(var(--by-padding-small-x) * 2.5 + var(--by-select-small-icon) * 2)
+    var(--by-padding-small-y) var(--by-padding-small-x);
+}
+
+/* fill */
+.fill {
+  width: 100%;
+}
+
+/* style */
+.flat {
+  border-color: var(--by-transparent);
+}
+
+.flat:hover,
+.content:hover .flat {
+  border-color: var(--by-binyal-color-6);
+}
+
+.flat:focus {
+  border-color: var(--by-binyal-color-6);
+  box-shadow: 0 0 0 2px var(--by-binyal-color-2);
+}
+
+.primary {
+  border-color: var(--by-gray-3);
+}
+
+.primary:hover,
+.content:hover .primary {
+  border-color: var(--by-binyal-color-6);
+}
+
+.primary:focus {
+  border-color: var(--by-binyal-color-6);
+  box-shadow: 0 0 0 2px var(--by-binyal-color-2);
+}
+
+.warning {
+  border-color: var(--by-yellow-4);
+  color: var(--by-yellow-4);
+}
+
+.warning .appearance svg,
+.show.warning .appearance svg,
+.content .warning + .close svg {
+  color: var(--by-yellow-4);
+}
+
+.content .warning .p {
+  color: var(--by-yellow-2);
+}
+
+.content .warning + .close:hover svg {
+  color: var(--by-yellow-5);
+}
+
+.warning:hover,
+.content:hover .warning {
+  box-shadow: 0 0 0 1px var(--by-yellow-1);
+}
+
+.warning:focus {
+  border-color: var(--by-yellow-4);
+  box-shadow: 0 0 0 2px var(--by-yellow-1);
+}
+
+.danger {
+  border-color: var(--by-red-6);
+  color: var(--by-red-6);
+}
+
+.danger:hover,
+.content:hover .danger {
+  box-shadow: 0 0 0 1px var(--by-red-3);
+}
+
+.danger:focus {
+  box-shadow: 0 0 0 2px var(--by-red-3);
+}
+
+.danger .appearance svg,
+.show.danger .appearance svg,
+.content .danger + .close svg {
+  color: var(--by-red-6);
+}
+
+.content .danger .p {
+  color: var(--by-red-4);
+}
+
+.content .danger + .close:hover svg {
+  color: var(--by-red-7);
+}
+
+/* disabled */
+select.s:disabled {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* close */
+.content .close {
+  position: absolute;
+  display: flex;
+  color: var(--by-gray-4);
+}
+
+.content_large .close {
+  top: calc(var(--by-height-large) / 2 - var(--by-select-large-icon) / 2);
+  right: calc(var(--by-padding-large-x) * 1.5 + var(--by-select-large-icon));
+}
+
+.content_medium .close {
+  top: calc(var(--by-height-medium) / 2 - var(--by-select-medium-icon) / 2);
+  right: calc(var(--by-padding-medium-x) * 1.5 + var(--by-select-medium-icon));
+}
+
+.content_small .close {
+  top: calc(var(--by-height-small) / 2 - var(--by-select-small-icon) / 2);
+  right: calc(var(--by-padding-small-x) * 1.5 + var(--by-select-small-icon));
+}
+
+.content_large .close svg {
+  width: var(--by-select-large-icon);
+  height: var(--by-select-large-icon);
+}
+
+.content_medium .close svg {
+  width: var(--by-select-medium-icon);
+  height: var(--by-select-medium-icon);
+}
+
+.content_small .close svg {
+  width: var(--by-select-small-icon);
+  height: var(--by-select-small-icon);
+}
+
+.content .close svg {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.content .close svg:hover {
+  transform: rotate(90deg);
+  color: var(--by-gray-5);
+}
+
+/* appearance */
+.s .appearance {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--by-gray-4);
+}
+
+.large .appearance {
+  right: var(--by-padding-large-x);
+}
+
+.medium .appearance {
+  right: var(--by-padding-medium-x);
+}
+
+.small .appearance {
+  right: var(--by-padding-small-x);
+}
+
+.large .appearance svg {
+  width: var(--by-select-large-icon);
+  height: var(--by-select-large-icon);
+}
+
+.medium .appearance svg {
+  width: var(--by-select-medium-icon);
+  height: var(--by-select-medium-icon);
+}
+
+.small .appearance svg {
+  width: var(--by-select-small-icon);
+  height: var(--by-select-small-icon);
+}
+
+.s .appearance svg {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* placeholder */
+.s .p {
+  color: var(--by-gray-4);
+}
+
+/* show */
+.show .appearance svg {
+  transform: rotate(180deg);
+  color: var(--by-gray-5);
+}
+
+/* options */
+.container {
+  background-color: var(--by-white);
+  border-radius: var(--by-radius);
+  box-shadow: 0 1px 6px 0 var(--by-gray-2), 0 1px 6px -1px var(--by-gray-2);
+  margin-top: 2px;
+}
+
+.container .o {
+  cursor: pointer;
+  padding: var(--by-padding-medium-y) var(--by-padding-medium-x);
+}
+
+.container .o:hover {
+  background-color: var(--by-gray-1);
+}
+
+.selected,
+.container .selected:hover {
+  background-color: var(--by-binyal-color-2);
+}
+
+.container .o:last-child {
+  border-radius: 0px 0px var(--by-radius) var(--by-radius);
+}
+
+.container .o:first-child {
+  border-radius: var(--by-radius) var(--by-radius) 0px 0px;
+}
+
+/* loading */
+.c_loading {
+  pointer-events: none;
+}
+
+.c_disable {
+  pointer-events: none;
+  opacity: 0.75;
+}

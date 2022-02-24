@@ -90,6 +90,10 @@
   --by-icon-large: 24px;
   --by-icon-medium: 20px;
   --by-icon-small: 16px;
+
+  --by-select-large-icon: 12px;
+  --by-select-medium-icon: 10px;
+  --by-select-small-icon: 8px;
 }
 
 p,

@@ -1,0 +1,32 @@
+.c {
+  position: fixed;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+.c_shadow {
+  box-shadow: 0 1px 6px 0 var(--by-gray-2), 0 1px 6px -1px var(--by-gray-2);
+}
+
+/* scroll */
+.scroll_vertical {
+  scrollbar-width: thin;
+  scrollbar-width: var(--by-gray-3);
+}
+
+.scroll_vertical::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
+}
+.scroll_vertical::-webkit-scrollbar-track {
+  background-color: var(--by-gray);
+  cursor: pointer;
+}
+.scroll_vertical::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: var(--by-gray-3);
+  padding: 0px 2px;
+  border-radius: var(--by-radius);
+}

@@ -6,9 +6,15 @@ export interface ByElement {
   style?: Style;
 }
 
+export type AutoComplete = 'on' | 'off';
+
 export const ByElement = {
   size: SIZE,
   style: STYLE,
+  autoComplete: {
+    on: 'on' as AutoComplete,
+    off: 'off' as AutoComplete,
+  },
 };
 
 export const withStaticProps = <T, P, E>(

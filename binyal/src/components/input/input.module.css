@@ -24,6 +24,10 @@
   outline: none;
 }
 
+.i::placeholder {
+  color: var(--by-gray-4);
+}
+
 /* size */
 
 .large {

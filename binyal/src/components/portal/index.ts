@@ -10,7 +10,7 @@ export interface PortalProps {
 export const Portal = (props: PortalProps): React.ReactPortal => {
   const [container] = useState(() => {
     const el = document.createElement(props.type ?? 'div');
-    el.classList.add(props.className ?? '');
+    if (props.className) el.classList.add(props.className);
     return el;
   });
 
