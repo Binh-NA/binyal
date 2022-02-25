@@ -6,9 +6,10 @@ import { RefContainer } from '../portal/ref-container';
 
 export interface ContainerProps<T> {
   pRef: React.RefObject<HTMLDivElement>;
-  value?: T;
+  value?: T | T[];
   options: Option<T>[];
-  setValue: (value: T) => void;
+  isMultiple?: boolean;
+  setValue: (value: T | T[]) => void;
   onOutSite: (isOutSite: boolean) => void;
 }
 
@@ -27,6 +28,7 @@ export const Container = <T,>(props: ContainerProps<T>): React.ReactElement => {
             key={item.key}
             value={props.value}
             option={item}
+            isMultiple={props.isMultiple}
             setValue={props.setValue}
           />
         ))}

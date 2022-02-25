@@ -24,6 +24,12 @@ export default {
       defaultValue: undefined,
       type: "string",
     },
+    multiple: {
+      name: "Multiple",
+      description: "Select multiple",
+      defaultValue: true,
+      type: "symbol",
+    },
     disabled: {
       name: "Disable",
       description: "Set status of button is disable",
@@ -68,8 +74,8 @@ export default {
     value: {
       name: "Value",
       description: "the value of an input element",
-      defaultValue: "a",
-      options: ["a", "b", "c"],
+      defaultValue: ["a"],
+      options: [["a"], ["a", "b"], ["a", "b", "c"]],
       control: {
         type: "select",
       },
@@ -174,9 +180,11 @@ const options = [
 ];
 
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
-export const Simple = Template.bind({});
-Simple.args = {
+
+export const Multiple = Template.bind({});
+Multiple.args = {
   options: [...options],
-  value: "b",
+  value: ["b", "c"],
   clear: true,
+  multiple: true,
 };
