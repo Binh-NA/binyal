@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  max-width: 100%;
 }
 
 .content select {
@@ -31,6 +32,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: transparent;
+  max-width: 100%;
 }
 
 .s::-ms-expand {
@@ -291,6 +293,16 @@ select.s:disabled {
   border-radius: var(--by-radius) var(--by-radius) 0px 0px;
 }
 
+.container .o_multiple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .o_multiple .checked {
+  color: var(--by-binyal-color-6);
+}
+
 /* loading */
 .c_loading {
   pointer-events: none;
@@ -299,4 +311,12 @@ select.s:disabled {
 .c_disable {
   pointer-events: none;
   opacity: 0.75;
+}
+
+/* label */
+.label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

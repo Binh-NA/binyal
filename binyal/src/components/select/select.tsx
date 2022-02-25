@@ -23,14 +23,16 @@ export interface SelectProps<T> extends ByElement {
   autoComplete?: AutoComplete;
   placeholder?: string;
   required?: boolean;
-  value?: T;
+  value?: T | T[];
   //content
   loading?: boolean;
+  clear?: boolean;
   options: Option<T>[];
+  multiple?: boolean;
   // css
   fill?: boolean;
   // events
-  setValue?: (value?: T) => void | Promise<void>;
+  setValue?: (value?: T | T[]) => void | Promise<void>;
   onChange?: React.ChangeEventHandler<HTMLSelectElement>;
   onBlur?: React.FocusEventHandler<HTMLElement>;
   onFocus?: React.FocusEventHandler<HTMLElement>;
@@ -110,10 +112,49 @@ const SelectContent = <T,>(
       autoFocus={props.autoFocus}
       autoComplete={props.autoComplete}
       required={props.required}
-      value={`${props.value}`}
+      value={`${props.value ?? ''}`}
       onChange={() => console.warn('Binyal not supported')}
     >
       <option value="" disabled>
+        Select
+      </option>
+      {props.options.map((item) => (
+        <option key={item.key} value={`${item.value}`}>
+          {item.name}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+const getValue = <T,>(param?: T | T[]): string => {
+  let value = '';
+  if (typeof param === 'object') {
+    value = (param as T[] | undefined)?.join(',') ?? '';
+  } else {
+    value = `${(param as T) ?? ''}`;
+  }
+  return value;
+};
+
+const SelectMultipleContent = <T,>(
+  props: SelectContentProps<T>,
+): React.ReactElement => {
+  const value = getValue(props.value);
+  return (
+    <select
+      ref={props.forwardRef}
+      id={props.id}
+      name={props.name}
+      disabled={props.disabled}
+      tabIndex={props.tabIndex}
+      autoFocus={props.autoFocus}
+      autoComplete={props.autoComplete}
+      required={props.required}
+      value={value}
+      onChange={() => console.warn('Binyal not supported')}
+    >
+      <option value={value} disabled>
         Select
       </option>
       {props.options.map((item) => (
@@ -132,17 +173,17 @@ const SelectContainer = <T,>(
   const sRef = useRefElement<HTMLSelectElement>(ref);
   const dRef = React.useRef<HTMLDivElement>(null);
   const [isShow, setIsShow] = React.useState<boolean>(false);
-  const [value, setValue] = React.useState<T | undefined>(props.value);
+  const [value, setValue] = React.useState<T | T[] | undefined>(props.value);
 
   const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     setIsShow(!isShow);
   };
 
-  const customChange = (param?: T) => {
+  const customChange = (param?: T | T[]) => {
     setValue(param);
     props.setValue?.(param);
-    if (sRef.current) sRef.current.value = `${param ?? ''}`;
+    if (sRef.current) sRef.current.value = getValue(props.value);
     const event = createEvent(
       'change',
       sRef,
@@ -150,9 +191,9 @@ const SelectContainer = <T,>(
     props.onChange?.(event);
   };
 
-  const onChange = (param?: T) => {
+  const onChange = (param?: T | T[]) => {
     customChange(param);
-    setIsShow((pre) => !pre);
+    !props.multiple && setIsShow((pre) => !pre);
   };
 
   const onClear = (e: React.MouseEvent<HTMLSpanElement>) => {
@@ -160,13 +201,25 @@ const SelectContainer = <T,>(
     customChange(undefined);
   };
 
-  const labelValue = React.useMemo(() => {
-    return props.options.find((item) => item.value === value)?.name;
+  const labelValue = React.useMemo((): string | undefined => {
+    if (!props.multiple) {
+      return props.options.find((item) => item.value === value)?.name;
+    }
+    const labels: string[] = [];
+    ((value as T[] | undefined) ?? []).forEach((el) => {
+      const label = props.options.find((item) => item.value === el)?.name;
+      if (label) labels.push(label);
+    });
+    return labels.join(', ') || undefined;
   }, [value, props.options]);
 
   return (
     <div className={getContentClass(props)} tabIndex={props.tabIndex}>
-      <SelectContent {...props} forwardRef={sRef} value={value} />
+      {props.multiple ? (
+        <SelectMultipleContent {...props} forwardRef={sRef} value={value} />
+      ) : (
+        <SelectContent {...props} forwardRef={sRef} value={value} />
+      )}
       <div
         ref={dRef}
         className={getClass(props, isShow)}
@@ -176,14 +229,14 @@ const SelectContainer = <T,>(
         onBlur={props.onBlur}
         tabIndex={1}
       >
-        <span className={labelValue ? '' : SelectCss.p}>
+        <span className={labelValue ? SelectCss.label : SelectCss.p}>
           {labelValue || props.placeholder || 'Select'}
         </span>
         <span className={SelectCss.appearance}>
           <Icon symbol="arrowDown" />
         </span>
       </div>
-      {value && (
+      {props.clear && value && (
         <span className={SelectCss.close} role="button" onClick={onClear}>
           <Icon symbol="close" />
         </span>
@@ -193,9 +246,10 @@ const SelectContainer = <T,>(
         <Container<T>
           pRef={dRef}
           options={props.options}
+          value={value}
+          isMultiple={props.multiple}
           setValue={onChange}
           onOutSite={setIsShow}
-          value={value}
         />
       )}
     </div>
