@@ -94,6 +94,10 @@
   border-color: var(--by-gray-1);
 }
 
+.flat:focus {
+  box-shadow: 0 0 0 2px var(--by-gray);
+}
+
 .primary {
   background-color: var(--by-binyal-color-6);
   color: var(--by-white);
@@ -103,6 +107,10 @@
 .primary:hover {
   background-color: var(--by-binyal-color-7);
   border-color: var(--by-binyal-color-7);
+}
+
+.primary:focus {
+  box-shadow: 0 0 0 2px var(--by-binyal-color-3);
 }
 
 .warning {
@@ -116,6 +124,10 @@
   border-color: var(--by-yellow-6);
 }
 
+.warning:focus {
+  box-shadow: 0 0 0 2px var(--by-yellow-1);
+}
+
 .danger {
   background-color: var(--by-red-6);
   color: var(--by-white);
@@ -125,6 +137,10 @@
 .danger:hover {
   background-color: var(--by-red-7);
   border-color: var(--by-red-7);
+}
+
+.danger:focus {
+  box-shadow: 0 0 0 2px var(--by-red-3);
 }
 
 /* outline */

@@ -23,19 +23,18 @@
 .c span.m {
   height: var(--by-checkbox-medium-height);
   width: var(--by-checkbox-medium-height);
-  background-color: #eee;
   display: inline-block;
   border-radius: var(--by-radius);
   border-width: 1px;
   border-style: solid;
+  box-shadow: 0 0 0 5px var(--by-transparent);
+  transition: box-shadow 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .c:hover span.m {
-  background-color: #ccc;
 }
 
 .c input:checked ~ span.m {
-  background-color: #2196f3;
 }
 
 .c:after {
@@ -44,19 +43,21 @@
   display: none;
 }
 
-.c input:checked ~ span.m:after {
-  display: block;
-}
-
 .c span.m:after {
   content: '✓';
-  display: none;
+  /* display: none; */
   position: absolute;
   left: calc(var(--by-checkbox-medium-height) / 4 + 0.5px);
-  font-size: var(--by-checkbox-medium-font);
   font-weight: bold;
   color: white;
   border-radius: var(--by-radius);
+  font-size: 0px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.c input:checked ~ span.m:after {
+  /* display: block; */
+  font-size: var(--by-checkbox-medium-font);
 }
 
 /* size */
@@ -70,6 +71,12 @@
 }
 
 .large span.m:after {
+  top: calc(var(--by-checkbox-large-height) / 2);
+  left: calc(var(--by-checkbox-large-height) / 2);
+}
+
+.large input:checked ~ span.m:after {
+  top: 0;
   left: calc(var(--by-checkbox-large-height) / 4 + 0.5px);
   font-size: var(--by-checkbox-large-font);
 }
@@ -84,6 +91,12 @@
 }
 
 .medium span.m:after {
+  top: calc(var(--by-checkbox-medium-height) / 2);
+  left: calc(var(--by-checkbox-medium-height) / 2);
+}
+
+.medium input:checked ~ span.m:after {
+  top: 0;
   left: calc(var(--by-checkbox-medium-height) / 4 + 0.5px);
   font-size: var(--by-checkbox-medium-font);
 }
@@ -98,6 +111,12 @@
 }
 
 .small span.m:after {
+  top: calc(var(--by-checkbox-small-height) / 2);
+  left: calc(var(--by-checkbox-small-height) / 2);
+}
+
+.small input:checked ~ span.m:after {
+  top: 0;
   left: calc(var(--by-checkbox-small-height) / 4 + 0.5px);
   font-size: var(--by-checkbox-small-font);
 }
@@ -114,6 +133,10 @@
 
 .flat input:checked ~ span.m {
   background-color: var(--by-transparent);
+}
+
+.flat input:focus ~ span.m {
+  box-shadow: 0 0 0 2px var(--by-gray);
 }
 
 .flat input:checked ~ span.m:after {
@@ -136,6 +159,10 @@
 .primary input:checked ~ span.m {
   border-color: var(--by-binyal-color-6);
   background-color: var(--by-binyal-color-6);
+}
+
+.primary input:focus ~ span.m {
+  box-shadow: 0 0 0 2px var(--by-binyal-color-3);
 }
 
 .primary input:checked ~ span.m:after {
@@ -161,6 +188,10 @@
   background-color: var(--by-yellow-4);
 }
 
+.warning input:focus ~ span.m {
+  box-shadow: 0 0 0 2px var(--by-yellow-2);
+}
+
 .warning input:checked ~ span.m:after {
   color: var(--by-white);
 }
@@ -182,6 +213,10 @@
 .danger input:checked ~ span.m {
   border-color: var(--by-red-6);
   background-color: var(--by-red-6);
+}
+
+.danger input:focus ~ span.m {
+  box-shadow: 0 0 0 2px var(--by-red-3);
 }
 
 .danger input:checked ~ span.m:after {
