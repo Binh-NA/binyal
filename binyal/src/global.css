@@ -94,6 +94,22 @@
   --by-select-large-icon: 12px;
   --by-select-medium-icon: 10px;
   --by-select-small-icon: 8px;
+
+  --by-checkbox-large-height: 32px;
+  --by-checkbox-medium-height: 24px;
+  --by-checkbox-small-height: 16px;
+  --by-checkbox-large-font: 22px;
+  --by-checkbox-medium-font: 16px;
+  --by-checkbox-small-font: 11px;
+}
+
+*:after {
+  --by-checkbox-large-height: 32px;
+  --by-checkbox-medium-height: 24px;
+  --by-checkbox-small-height: 16px;
+  --by-checkbox-large-font: 22px;
+  --by-checkbox-medium-font: 16px;
+  --by-checkbox-small-font: 11px;
 }
 
 p,
