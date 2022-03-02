@@ -1,0 +1,214 @@
+.c {
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--by-checkbox-medium-font);
+  user-select: none;
+  margin: 0px;
+  padding: 0;
+  border-radius: var(--by-radius);
+  align-items: center;
+}
+
+.c input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  border: none;
+  margin: 0px;
+}
+
+.c span.m {
+  height: var(--by-checkbox-medium-height);
+  width: var(--by-checkbox-medium-height);
+  background-color: #eee;
+  display: inline-block;
+  border-radius: var(--by-radius);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.c:hover span.m {
+  background-color: #ccc;
+}
+
+.c input:checked ~ span.m {
+  background-color: #2196f3;
+}
+
+.c:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.c input:checked ~ span.m:after {
+  display: block;
+}
+
+.c span.m:after {
+  content: '✓';
+  display: none;
+  position: absolute;
+  left: calc(var(--by-checkbox-medium-height) / 4 + 0.5px);
+  font-size: var(--by-checkbox-medium-font);
+  font-weight: bold;
+  color: white;
+  border-radius: var(--by-radius);
+}
+
+/* size */
+.lerge {
+  font-size: var(--by-checkbox-lerge-font);
+}
+
+.large span.m {
+  height: var(--by-checkbox-large-height);
+  width: var(--by-checkbox-large-height);
+}
+
+.large span.m:after {
+  left: calc(var(--by-checkbox-large-height) / 4 + 0.5px);
+  font-size: var(--by-checkbox-large-font);
+}
+
+.medium {
+  font-size: var(--by-checkbox-medium-font);
+}
+
+.medium span.m {
+  height: var(--by-checkbox-medium-height);
+  width: var(--by-checkbox-medium-height);
+}
+
+.medium span.m:after {
+  left: calc(var(--by-checkbox-medium-height) / 4 + 0.5px);
+  font-size: var(--by-checkbox-medium-font);
+}
+
+.small {
+  font-size: var(--by-checkbox-small-font);
+}
+
+.small span.m {
+  height: var(--by-checkbox-small-height);
+  width: var(--by-checkbox-small-height);
+}
+
+.small span.m:after {
+  left: calc(var(--by-checkbox-small-height) / 4 + 0.5px);
+  font-size: var(--by-checkbox-small-font);
+}
+
+/* style */
+.flat span.m {
+  border-color: var(--by-transparent);
+  background-color: var(--by-gray-1);
+}
+
+.flat:hover span.m {
+  background-color: var(--by-gray-2);
+}
+
+.flat input:checked ~ span.m {
+  background-color: var(--by-transparent);
+}
+
+.flat input:checked ~ span.m:after {
+  color: var(--by-comfy-9);
+}
+
+.flat:hover input:checked ~ span.m {
+  background-color: var(--by-gray-1);
+}
+
+.primary span.m {
+  border-color: var(--by-binyal-color-6);
+  background-color: var(--by-transparent);
+}
+
+.primary:hover span.m {
+  background-color: var(--by-binyal-color-2);
+}
+
+.primary input:checked ~ span.m {
+  border-color: var(--by-binyal-color-6);
+  background-color: var(--by-binyal-color-6);
+}
+
+.primary input:checked ~ span.m:after {
+  color: var(--by-white);
+}
+
+.primary:hover input:checked ~ span.m {
+  border-color: var(--by-binyal-color-7);
+  background-color: var(--by-binyal-color-7);
+}
+
+.warning span.m {
+  border-color: var(--by-yellow-4);
+  background-color: var(--by-transparent);
+}
+
+.warning:hover span.m {
+  background-color: var(--by-yellow-1);
+}
+
+.warning input:checked ~ span.m {
+  border-color: var(--by-yellow-4);
+  background-color: var(--by-yellow-4);
+}
+
+.warning input:checked ~ span.m:after {
+  color: var(--by-white);
+}
+
+.warning:hover input:checked ~ span.m {
+  border-color: var(--by-yellow-5);
+  background-color: var(--by-yellow-5);
+}
+
+.danger span.m {
+  border-color: var(--by-red-6);
+  background-color: var(--by-transparent);
+}
+
+.danger:hover span.m {
+  background-color: var(--by-red-1);
+}
+
+.danger input:checked ~ span.m {
+  border-color: var(--by-red-6);
+  background-color: var(--by-red-6);
+}
+
+.danger input:checked ~ span.m:after {
+  color: var(--by-white);
+}
+
+.danger:hover input:checked ~ span.m {
+  border-color: var(--by-red-7);
+  background-color: var(--by-red-7);
+}
+
+/* fill */
+.fill {
+  width: 100%;
+}
+
+/* disabled */
+.c input:disabled ~ span.m {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.disabled span.m {
+  border-color: var(--by-gray-2);
+}
