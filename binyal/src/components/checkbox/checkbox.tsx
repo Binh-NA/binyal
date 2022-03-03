@@ -13,10 +13,11 @@ export interface CheckBoxProps extends ByElement {
   disabled?: boolean;
   checked?: boolean;
   defaultChecked?: boolean;
-  // content
+  // contents
   label?: string;
   fill?: boolean;
   children: undefined;
+  // events
   setChecked?: (isChecked?: boolean) => void;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
@@ -82,5 +83,8 @@ const CheckBox = (props: CheckBoxProps): React.ReactElement => {
     </label>
   );
 };
+
+CheckBox.size = ByElement.size;
+CheckBox.Style = ByElement.style;
 
 export default CheckBox;
