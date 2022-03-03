@@ -5,6 +5,7 @@ type FlexDirection = 'row' | 'col';
 type FlexAlign = 'stretch' | 'start' | 'center' | 'end' | 'between';
 
 export interface FlexProps {
+  className?: string;
   direction?: FlexDirection;
   gap?: number;
   alignItems?: FlexAlign;
@@ -75,7 +76,7 @@ const getStyle = (props: FlexProps): React.CSSProperties => {
 
 const Flex = (props: FlexProps): React.ReactElement => {
   return (
-    <div style={getStyle(props)}>
+    <div className={props.className} style={getStyle(props)}>
       {props.children &&
         props.children.map((item, i) => {
           if (props.gap && i > 0) {

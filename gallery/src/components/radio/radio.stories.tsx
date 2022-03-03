@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Radio from "../../../../binyal/src/components/radio";
+import { Radio } from "../../../../binyal/src/components";
 
 export default {
   title: "Components/Radio",
