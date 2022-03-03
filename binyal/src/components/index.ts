@@ -6,5 +6,7 @@ export { default as Loading } from './loading';
 export { default as Select } from './select';
 export { default as Text } from './text';
 export { default as CheckBox } from './checkbox';
+export { default as Radio } from './radio';
+export { default as Flex } from './flex';
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;
