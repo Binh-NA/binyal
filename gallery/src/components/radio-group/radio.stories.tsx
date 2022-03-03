@@ -6,6 +6,24 @@ export default {
   title: "Components/Radio",
   component: RadioGroup,
   argTypes: {
+    size: {
+      name: "Size",
+      description: "Set the size of radio",
+      defaultValue: "medium",
+      options: ["small", "medium", "large"],
+      control: {
+        type: "select",
+      },
+    },
+    style: {
+      name: "Style",
+      description: "Set the style of radio",
+      defaultValue: "primary",
+      options: ["flat", "primary", "warning", "danger"],
+      control: {
+        type: "select",
+      },
+    },
     name: {
       name: "Name",
       description: "The name attribute specifies a name for an HTML element",

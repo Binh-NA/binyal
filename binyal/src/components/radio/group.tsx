@@ -1,4 +1,5 @@
 import React from 'react';
+import { ByElement } from '../../common/by-element';
 import Flex from '../flex';
 import { SpaceX, SpaceY } from '../space/space';
 import Radio from './radio';
@@ -12,7 +13,7 @@ interface RadioOption {
   disabled?: boolean;
 }
 
-export interface RadioGroupProps {
+export interface RadioGroupProps extends ByElement {
   name?: string;
   className?: string;
   direction?: RadioGroupDirection;
@@ -38,9 +39,17 @@ const SpaceContent = (props: {
   props.isCol ? <SpaceY size={props.gap} /> : <SpaceX size={props.gap} />;
 
 const RadioGroup = (props: RadioGroupProps): React.ReactElement => {
-  const onClick = (e: React.MouseEvent<HTMLInputElement>) => {
-    props.setValue?.(e.currentTarget.value);
+  const [value, setValue] = React.useState<string>();
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.currentTarget.value;
+    setValue(val);
+    props.setValue?.(val);
   };
+
+  React.useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
 
   return (
     <Flex direction={props.direction} className={props.className}>
@@ -56,8 +65,11 @@ const RadioGroup = (props: RadioGroupProps): React.ReactElement => {
             name={props.name}
             label={item.name}
             value={item.value}
-            onClick={onClick}
+            onChange={onChange}
             disabled={item.disabled}
+            checked={value === item.value}
+            size={props.size}
+            style={props.style}
           />
         </React.Fragment>
       ))}

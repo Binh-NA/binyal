@@ -18,7 +18,7 @@ export interface RadioProps extends ByElement {
   label?: string;
   fill?: boolean;
   // events
-  onClick?: React.MouseEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const configClass = {
@@ -64,7 +64,7 @@ const Radio = (props: RadioProps): React.ReactElement => (
       checked={props.checked}
       defaultChecked={props.defaultChecked}
       value={props.value}
-      onClick={props.onClick}
+      onChange={props.onChange}
     />
     <span className={Css.m}></span>
     {props.label && (
