@@ -17,7 +17,6 @@ export interface RadioProps extends ByElement {
   // contents
   label?: string;
   fill?: boolean;
-  children: undefined;
   // events
   onClick?: React.MouseEventHandler<HTMLInputElement>;
 }
