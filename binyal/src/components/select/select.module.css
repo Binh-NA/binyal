@@ -6,7 +6,9 @@
 }
 
 .content select {
-  display: none;
+  visibility: hidden;
+  height: 0px;
+  border: none;
 }
 
 .content .s {
@@ -170,6 +172,11 @@ select.s:disabled {
   position: absolute;
   display: flex;
   color: var(--by-gray-4);
+  visibility: hidden;
+}
+
+.content:hover .close {
+  visibility: inherit;
 }
 
 .content_large .close {
@@ -255,6 +262,12 @@ select.s:disabled {
 /* placeholder */
 .s .p {
   color: var(--by-gray-4);
+}
+
+.s .label,
+.s .p {
+  display: flex;
+  flex-direction: column;
 }
 
 /* show */

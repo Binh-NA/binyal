@@ -215,11 +215,6 @@ const SelectContainer = <T,>(
 
   return (
     <div className={getContentClass(props)} tabIndex={props.tabIndex}>
-      {props.multiple ? (
-        <SelectMultipleContent {...props} forwardRef={sRef} value={value} />
-      ) : (
-        <SelectContent {...props} forwardRef={sRef} value={value} />
-      )}
       <div
         ref={dRef}
         className={getClass(props, isShow)}
@@ -230,6 +225,11 @@ const SelectContainer = <T,>(
         tabIndex={1}
       >
         <span className={labelValue ? SelectCss.label : SelectCss.p}>
+          {props.multiple ? (
+            <SelectMultipleContent {...props} forwardRef={sRef} value={value} />
+          ) : (
+            <SelectContent {...props} forwardRef={sRef} value={value} />
+          )}
           {labelValue || props.placeholder || 'Select'}
         </span>
         <span className={SelectCss.appearance}>
