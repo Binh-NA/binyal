@@ -1,12 +1,12 @@
 import React from 'react';
 import Space from '../space';
+import { Direction, DIRECTION } from '../../common/direction';
 
-type FlexDirection = 'row' | 'col';
 type FlexAlign = 'stretch' | 'start' | 'center' | 'end' | 'between';
 
 export interface FlexProps {
   className?: string;
-  direction?: FlexDirection;
+  direction?: Direction;
   gap?: number;
   alignItems?: FlexAlign;
   justifyContent?: FlexAlign;
@@ -14,13 +14,10 @@ export interface FlexProps {
 }
 
 const __STATIC: {
-  direction: Record<FlexDirection, FlexDirection>;
+  direction: Record<Direction, Direction>;
   align: Record<FlexAlign, FlexAlign>;
 } = {
-  direction: {
-    row: 'row',
-    col: 'col',
-  },
+  direction: DIRECTION,
   align: {
     stretch: 'stretch',
     center: 'center',
