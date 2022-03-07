@@ -63,8 +63,8 @@
 }
 
 /* size */
-.lerge {
-  font-size: var(--by-checkbox-lerge-font);
+.large {
+  font-size: var(--by-checkbox-large-font);
 }
 
 .large span.m {

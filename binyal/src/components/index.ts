@@ -8,6 +8,8 @@ export { default as Select } from './select';
 export { default as Text } from './text';
 export { default as CheckBox } from './checkbox';
 export { default as Flex } from './flex';
+export { default as Toggle } from './toggle';
+
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;
 export const Radio = R.Radio;
