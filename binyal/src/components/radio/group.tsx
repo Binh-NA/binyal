@@ -3,8 +3,7 @@ import { ByElement } from '../../common/by-element';
 import Flex from '../flex';
 import { SpaceX, SpaceY } from '../space/space';
 import Radio from './radio';
-
-type RadioGroupDirection = 'row' | 'col';
+import { Direction, DIRECTION } from '../../common/direction';
 
 interface RadioOption {
   key: string;
@@ -16,7 +15,7 @@ interface RadioOption {
 export interface RadioGroupProps extends ByElement {
   name?: string;
   className?: string;
-  direction?: RadioGroupDirection;
+  direction?: Direction;
   gap?: number;
   options?: RadioOption[];
   value?: string;
@@ -24,12 +23,9 @@ export interface RadioGroupProps extends ByElement {
 }
 
 const __STATIC: {
-  direction: Record<RadioGroupDirection, RadioGroupDirection>;
+  direction: Record<Direction, Direction>;
 } = {
-  direction: {
-    col: 'col',
-    row: 'row',
-  },
+  direction: DIRECTION,
 };
 
 const SpaceContent = (props: {
