@@ -1,6 +1,6 @@
 {
   "name": "binyal",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "scripts": {
     "rollup": "rollup -c",
@@ -65,6 +65,6 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
-    "@Binh-NA:registry": "https://npm.pkg.github.com/Binh-NA"
+    "@Binh-NA:registry": "https://npm.pkg.github.com"
   }
 }
