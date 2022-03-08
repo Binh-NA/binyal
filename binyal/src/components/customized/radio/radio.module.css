@@ -1,0 +1,149 @@
+.r {
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--by-checkbox-medium-font);
+  user-select: none;
+  margin: 0px;
+  padding: 0;
+  border-radius: var(--by-radius-round);
+  align-items: center;
+}
+
+.r input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  border: none;
+  margin: 0px;
+}
+
+.r .mc {
+  display: none;
+}
+
+.r .muc {
+  display: inline-flex;
+}
+
+.r input:checked ~ .mc {
+  display: inline-flex;
+}
+
+.r input:checked ~ .muc {
+  display: none;
+}
+
+/* size */
+.large {
+  font-size: var(--by-checkbox-large-font);
+}
+
+.medium {
+  font-size: var(--by-checkbox-medium-font);
+}
+
+.small {
+  font-size: var(--by-checkbox-small-font);
+}
+
+/* style */
+.flat span.mc,
+.flat span.muc {
+  color: var(--by-gray-3);
+}
+
+.flat input:checked ~ span.mc,
+.flat input:checked ~ span.muc {
+  color: var(--by-gray-6);
+}
+
+.primary span.mc,
+.primary span.muc {
+  color: var(--by-binyal-color-3);
+}
+
+.primary input:checked ~ span.mc,
+.primary input:checked ~ span.muc {
+  color: var(--by-binyal-color-6);
+}
+
+.warning span.mc,
+.warning span.muc {
+  color: var(--by-yellow-2);
+}
+
+.warning input:checked ~ span.mc,
+.warning input:checked ~ span.muc {
+  color: var(--by-yellow-4);
+}
+
+.danger span.mc,
+.danger span.muc {
+  color: var(--by-red-3);
+}
+
+.danger input:checked ~ span.mc,
+.danger input:checked ~ span.muc {
+  color: var(--by-red-6);
+}
+
+/* rating */
+.rating_checked span.mc {
+  display: inline-flex;
+}
+
+.rating_checked span.muc {
+  display: none;
+}
+
+/* rating style */
+.flat.rating_checked span.mc,
+.flat.rating_checked span.muc {
+  color: var(--by-gray-6);
+}
+
+.flat.rating:hover span.mc,
+.flat.rating:hover span.muc,
+.flat.rating_checked:hover span.mc,
+.flat.rating_checked:hover span.umc {
+  color: var(--by-gray-7);
+}
+
+.primary.rating_checked span.mc,
+.primary.rating_checked span.muc {
+  color: var(--by-binyal-color-6);
+}
+
+.primary.rating:hover span.mc,
+.primary.rating:hover span.muc,
+.primary.rating_checked:hover span.mc,
+.primary.rating_checked:hover span.muc {
+  color: var(--by-binyal-color-7);
+}
+
+.warning.rating_checked span.mc,
+.warning.rating_checked span.muc {
+  color: var(--by-yellow-4);
+}
+
+.warning.rating:hover span.mc,
+.warning.rating:hover span.muc,
+.warning.rating_checked:hover span.mc,
+.warning.rating_checked:hover span.muc {
+  color: var(--by-yellow-5);
+}
+
+.danger.rating_checked span.mc,
+.danger.rating_checked span.muc {
+  color: var(--by-red-6);
+}
+
+.danger.rating:hover span.mc,
+.danger.rating:hover span.muc,
+.danger.rating_checked:hover span.mc,
+.danger.rating_checked:hover span.muc {
+  color: var(--by-red-7);
+}

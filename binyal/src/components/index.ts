@@ -10,6 +10,8 @@ export { default as CheckBox } from './checkbox';
 export { default as Flex } from './flex';
 export { default as Toggle } from './toggle';
 export { default as ButtonGroup } from './button/button-group';
+export { default as Rating } from './rating';
+export { default as CustomizedRadio } from './customized/radio';
 
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;
