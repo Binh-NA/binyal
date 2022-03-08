@@ -1,11 +1,21 @@
 import React from 'react';
 import Icons from '../../icon/icon.svg';
 
-type IconSymbol = 'arrowDown' | 'close';
+type IconSymbol =
+  | 'arrowDown'
+  | 'close'
+  | 'star'
+  | 'starBorder'
+  | 'heart'
+  | 'heartBorder';
 
 const __ICON_IDS: Record<IconSymbol, string> = {
   arrowDown: 'by-i-arrow-down',
   close: 'by-i-close',
+  star: 'by-i-star',
+  starBorder: 'by-i-star-border',
+  heart: 'by-i-heart',
+  heartBorder: 'by-i-heart-border',
 };
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
