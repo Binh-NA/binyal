@@ -1,0 +1,46 @@
+<svg>
+  <symbol id="by-i-arrow-down" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Rounded" transform="translate(-616.000000, -2467.000000)">
+        <g id="Hardware" transform="translate(100.000000, 2404.000000)">
+          <g id="-Round-/-Hardware-/-keyboard_arrow_down" transform="translate(510.000000, 54.000000)">
+            <g>
+              <rect id="Rectangle-Copy-103" x="0" y="0" width="24" height="24"></rect>
+              <path d="M8.12,9.29 L12,13.17 L15.88,9.29 C16.27,8.9 16.9,8.9 17.29,9.29 C17.68,9.68 17.68,10.31 17.29,10.7 L12.7,15.29 C12.31,15.68 11.68,15.68 11.29,15.29 L6.7,10.7 C6.31,10.31 6.31,9.68 6.7,9.29 C7.09,8.91 7.73,8.9 8.12,9.29 Z" id="🔹-Icon-Color" fill="currentColor"></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </symbol>
+
+  <symbol id="by-i-close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60.963 60.842" style="enable-background:new 0 0 60.963 60.842;" xml:space="preserve">
+    <path style="fill:currentColor;" d="M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611
+    c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611
+    l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369
+    l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369
+    C61.42,57.647,61.42,54.687,59.595,52.861z"/>
+  </symbol>
+
+  <symbol id="by-i-star" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" fill="currentColor">
+      <path d="M29.3,12.7c-0.1-0.4-0.5-0.7-1-0.7h-8.7L17,3.7c-0.1-0.4-0.5-0.7-1-0.7s-0.8,0.3-1,0.7L12.4,12H3.7c-0.4,0-0.8,0.3-1,0.7
+      c-0.1,0.4,0,0.9,0.4,1.1l7,5.1l-2.7,8.3c-0.1,0.4,0,0.9,0.4,1.1c0.4,0.3,0.8,0.3,1.2,0l7-5.1l7,5.1c0.2,0.1,0.4,0.2,0.6,0.2
+      s0.4-0.1,0.6-0.2c0.4-0.3,0.5-0.7,0.4-1.1l-2.7-8.3l7-5.1C29.2,13.6,29.4,13.1,29.3,12.7z"/>
+  </symbol>
+
+  <symbol id="by-i-star-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  </symbol>
+
+  <symbol id="by-i-heart" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="24" width="24" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <g transform="translate(0 -1028.4)">
+    <path d="m7 1031.4c-1.5355 0-3.0784 0.5-4.25 1.7-2.3431 2.4-2.2788 6.1 0 8.5l9.25 9.8 9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-0.75 0.8-0.75-0.8c-1.172-1.2-2.7145-1.7-4.25-1.7z" fill="currentColor"/>
+  </g>
+  </symbol>
+
+  <symbol id="by-i-heart-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="cureentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+  </symbol>
+</svg>
