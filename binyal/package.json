@@ -1,12 +1,12 @@
 {
   "name": "binyal",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .eslintignore",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   },
   "keywords": [
     "binyal"

@@ -1,45 +1,45 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Flex from "../../../../binyal/src/components/flex";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Flex from '../../../../binyal/src/components/flex';
 
 export default {
-  title: "Components/Flex",
+  title: 'Components/Flex',
   component: Flex,
   argTypes: {
     direction: {
-      name: "Direction",
-      description: "Set the direction of the flexible items",
-      defaultValue: "row",
-      options: ["row", "col"],
+      name: 'Direction',
+      description: 'Set the direction of the flexible items',
+      defaultValue: 'row',
+      options: ['row', 'col'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     alignItems: {
-      name: "AlignItems",
+      name: 'AlignItems',
       description:
-        "The align-items property specifies the default alignment for items inside the flexible container",
-      defaultValue: "stretch",
-      options: ["stretch", "start", "center", "end", "between"],
+        'The align-items property specifies the default alignment for items inside the flexible container',
+      defaultValue: 'stretch',
+      options: ['stretch', 'start', 'center', 'end', 'between'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     justifyContent: {
-      name: "JustifyContent",
+      name: 'JustifyContent',
       description:
         "The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis",
-      defaultValue: "stretch",
-      options: ["stretch", "start", "center", "end", "between"],
+      defaultValue: 'stretch',
+      options: ['stretch', 'start', 'center', 'end', 'between'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     gap: {
-      name: "Gap",
-      description: "space content",
+      name: 'Gap',
+      description: 'space content',
       defaultValue: undefined,
-      type: "number",
+      type: 'number',
     },
   },
 } as ComponentMeta<typeof Flex>;
@@ -52,7 +52,7 @@ const Template: ComponentStory<typeof Flex> = (args) => (
         style={{
           width: 100,
           height: 100,
-          backgroundColor: "var(--by-binyal-color-6)",
+          backgroundColor: 'var(--by-binyal-color-6)',
         }}
       ></div>
     ))}

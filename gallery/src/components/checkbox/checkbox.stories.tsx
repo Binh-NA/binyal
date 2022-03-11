@@ -1,82 +1,82 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CheckBox from "../../../../binyal/src/components/checkbox";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import CheckBox from '../../../../binyal/src/components/checkbox';
 
 export default {
-  title: "Components/CheckBox",
+  title: 'Components/CheckBox',
   component: CheckBox,
   argTypes: {
     id: {
-      name: "Id",
-      description: "Used to specify a unique id for an HTML element",
+      name: 'Id',
+      description: 'Used to specify a unique id for an HTML element',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     name: {
-      name: "Name",
-      description: "The name attribute specifies a name for an HTML element",
+      name: 'Name',
+      description: 'The name attribute specifies a name for an HTML element',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     className: {
-      name: "ClassName",
-      description: "Set the class for config checkbox",
+      name: 'ClassName',
+      description: 'Set the class for config checkbox',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     size: {
-      name: "Size",
-      description: "Set the size of checkbox",
-      defaultValue: "medium",
-      options: ["small", "medium", "large"],
+      name: 'Size',
+      description: 'Set the size of checkbox',
+      defaultValue: 'medium',
+      options: ['small', 'medium', 'large'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     style: {
-      name: "Style",
-      description: "Set the style of checkbox",
-      defaultValue: "primary",
-      options: ["flat", "primary", "warning", "danger"],
+      name: 'Style',
+      description: 'Set the style of checkbox',
+      defaultValue: 'primary',
+      options: ['flat', 'primary', 'warning', 'danger'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     fill: {
-      name: "Fill",
-      description: "Option to fit checkbox width to its parent width",
+      name: 'Fill',
+      description: 'Option to fit checkbox width to its parent width',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     disabled: {
-      name: "Disable",
-      description: "Set status of checkbox is disable",
+      name: 'Disable',
+      description: 'Set status of checkbox is disable',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     defaultChecked: {
-      name: "DefaultChecked",
-      description: "Set default value of checkbox is checked",
+      name: 'DefaultChecked',
+      description: 'Set default value of checkbox is checked',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     label: {
-      name: "Label",
-      description: "the label of an check element",
+      name: 'Label',
+      description: 'the label of an check element',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     setChecked: {
-      name: "SetChecked",
-      description: "Event change value",
+      name: 'SetChecked',
+      description: 'Event change value',
       defaultValue: undefined,
-      action: "setChecked",
+      action: 'setChecked',
     },
     onChange: {
-      name: "OnChange",
-      description: "Set the handler to handle change event",
+      name: 'OnChange',
+      description: 'Set the handler to handle change event',
       defaultValue: undefined,
-      action: "OnChange",
+      action: 'OnChange',
     },
   },
 } as ComponentMeta<typeof CheckBox>;

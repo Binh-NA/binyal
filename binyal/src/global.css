@@ -101,6 +101,8 @@
   --by-checkbox-large-font: 22px;
   --by-checkbox-medium-font: 16px;
   --by-checkbox-small-font: 11px;
+
+  --by-border-arrow: 6px;
 }
 
 *:after {

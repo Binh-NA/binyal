@@ -1,5 +1,5 @@
-import { addons } from "@storybook/addons";
-import binyalTheme from "./binyal";
+import { addons } from '@storybook/addons';
+import binyalTheme from './binyal';
 
 addons.setConfig({
   theme: binyalTheme,

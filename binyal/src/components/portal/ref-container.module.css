@@ -30,3 +30,197 @@
   padding: 0px 2px;
   border-radius: var(--by-radius);
 }
+
+/* arrow */
+
+.t_c {
+  position: fixed;
+  width: auto;
+  height: auto;
+  border-radius: var(--by-radius);
+}
+
+.t_c .t_r {
+  position: relative;
+}
+
+.t_c .t_r span.arrow {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+
+.t_c .t_r span.arrow_down {
+  bottom: calc(-1 * var(--by-border-arrow));
+  border-left: var(--by-border-arrow) solid transparent;
+  border-right: var(--by-border-arrow) solid transparent;
+  border-top: var(--by-border-arrow) solid var(--by-binyal-color-4);
+}
+
+.t_c .t_r span.arrow_down_center {
+  left: calc(50% - var(--by-border-arrow));
+}
+
+.t_c .t_r span.arrow_down_start {
+  left: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_down_end {
+  right: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_up {
+  top: calc(-1 * var(--by-border-arrow));
+  border-left: var(--by-border-arrow) solid transparent;
+  border-right: var(--by-border-arrow) solid transparent;
+  border-bottom: var(--by-border-arrow) solid var(--by-binyal-color-4);
+}
+
+.t_c .t_r span.arrow_up_center {
+  left: calc(50% - var(--by-border-arrow));
+}
+
+.t_c .t_r span.arrow_up_start {
+  left: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_up_end {
+  right: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_right {
+  right: calc(-1 * var(--by-border-arrow));
+  border-top: var(--by-border-arrow) solid transparent;
+  border-bottom: var(--by-border-arrow) solid transparent;
+  border-left: var(--by-border-arrow) solid var(--by-binyal-color-4);
+}
+
+.t_c .t_r span.arrow_right_center {
+  top: calc(50% - var(--by-border-arrow));
+}
+
+.t_c .t_r span.arrow_right_start {
+  top: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_right_end {
+  bottom: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_left {
+  left: calc(-1 * var(--by-border-arrow));
+  border-top: var(--by-border-arrow) solid transparent;
+  border-bottom: var(--by-border-arrow) solid transparent;
+  border-right: var(--by-border-arrow) solid var(--by-binyal-color-4);
+}
+
+.t_c .t_r span.arrow_left_center {
+  top: calc(50% - var(--by-border-arrow));
+}
+
+.t_c .t_r span.arrow_left_start {
+  top: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+.t_c .t_r span.arrow_left_end {
+  bottom: calc(var(--by-border-arrow) + var(--by-radius));
+}
+
+/* style */
+.t_c.flat {
+  background-color: var(--by-transparent);
+  color: var(--by-comfy-9);
+}
+
+.t_c.flat span.arrow {
+  border: none;
+}
+
+.t_c.primary {
+  background-color: var(--by-binyal-color-4);
+  color: var(--by-white);
+}
+
+.t_c.primary.c_shadow {
+  box-shadow: 0 1px 6px 0 var(--by-binyal-color-2),
+    0 1px 6px -1px var(--by-binyal-color-2);
+}
+
+.t_c.primary span.arrow_up {
+  border-bottom-color: var(--by-binyal-color-4);
+}
+
+.t_c.primary span.arrow_down {
+  border-top-color: var(--by-binyal-color-4);
+}
+
+.t_c.primary span.arrow_left {
+  border-right-color: var(--by-binyal-color-4);
+}
+
+.t_c.primary span.arrow_right {
+  border-left-color: var(--by-binyal-color-4);
+}
+
+.t_c.warning {
+  background-color: var(--by-yellow-2);
+  color: var(--by-comfy-9);
+}
+
+.t_c.warning.c_shadow {
+  box-shadow: 0 1px 6px 0 var(--by-yellow-1), 0 1px 6px -1px var(--by-yellow-1);
+}
+
+.t_c.warning span.arrow_up {
+  border-bottom-color: var(--by-yellow-2);
+}
+
+.t_c.warning span.arrow_down {
+  border-top-color: var(--by-yellow-2);
+}
+
+.t_c.warning span.arrow_left {
+  border-right-color: var(--by-yellow-2);
+}
+
+.t_c.warning span.arrow_right {
+  border-left-color: var(--by-yellow-2);
+}
+
+.t_c.danger {
+  background-color: var(--by-red-4);
+  color: var(--by-white);
+}
+
+.t_c.danger.c_shadow {
+  box-shadow: 0 1px 6px 0 var(--by-red-2), 0 1px 6px -1px var(--by-red-2);
+}
+
+.t_c.danger span.arrow_up {
+  border-bottom-color: var(--by-red-4);
+}
+
+.t_c.danger span.arrow_down {
+  border-top-color: var(--by-red-4);
+}
+
+.t_c.danger span.arrow_left {
+  border-right-color: var(--by-red-4);
+}
+
+.t_c.danger span.arrow_right {
+  border-left-color: var(--by-red-4);
+}
+
+/* size */
+.t_c.large {
+  font-size: var(--by-font-size-large);
+}
+
+.t_c.medium {
+  font-size: var(--by-font-size-medium);
+}
+
+.t_c.small {
+  font-size: var(--by-font-size-small);
+}

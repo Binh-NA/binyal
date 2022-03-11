@@ -7,7 +7,7 @@
     "eslint-config-prettier": "8.3.0"
   },
   "devDependencies": {
-    "husky": "7.0.4",
+    "husky": "7.0.0",
     "lint-staged": "12.3.3",
     "prettier": "2.5.1"
   },
@@ -36,7 +36,12 @@
     "url": "https://github.com/Binh-NA/binyal/issues"
   },
   "homepage": "https://github.com/Binh-NA/binyal#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   }
 }
