@@ -36,7 +36,12 @@
     "url": "https://github.com/Binh-NA/binyal/issues"
   },
   "homepage": "https://github.com/Binh-NA/binyal#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   }
 }

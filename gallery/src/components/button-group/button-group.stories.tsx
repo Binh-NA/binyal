@@ -1,19 +1,19 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import ButtonGroup from "../../../../binyal/src/components/button/button-group";
-import Button from "../../../../binyal/src/components/button";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import ButtonGroup from '../../../../binyal/src/components/button/button-group';
+import Button from '../../../../binyal/src/components/button';
 
 export default {
-  title: "Components/ButtonGroup",
+  title: 'Components/ButtonGroup',
   component: ButtonGroup,
   argTypes: {
     direction: {
-      name: "Direction",
-      description: "Set the direction of the flexible items",
-      defaultValue: "row",
-      options: ["row", "col"],
+      name: 'Direction',
+      description: 'Set the direction of the flexible items',
+      defaultValue: 'row',
+      options: ['row', 'col'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
   },

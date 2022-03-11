@@ -1,121 +1,121 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import Button from "../../../../binyal/src/components/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import Button from '../../../../binyal/src/components/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCoffee,
   faArrowAltCircleLeft,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Button",
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     className: {
-      name: "ClassName",
-      description: "Set the class for config button",
+      name: 'ClassName',
+      description: 'Set the class for config button',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     type: {
-      name: "Type",
-      description: "The type attribute specifies the type of button",
-      defaultValue: "button",
-      options: ["button", "submit", "reset"],
+      name: 'Type',
+      description: 'The type attribute specifies the type of button',
+      defaultValue: 'button',
+      options: ['button', 'submit', 'reset'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     disabled: {
-      name: "Disable",
-      description: "Set status of button is disable",
+      name: 'Disable',
+      description: 'Set status of button is disable',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     tabIndex: {
-      name: "TabIndex",
+      name: 'TabIndex',
       description:
-        "The tabindex attribute specifies the tab order of an element",
+        'The tabindex attribute specifies the tab order of an element',
       defaultValue: undefined,
-      type: "number",
+      type: 'number',
     },
     loading: {
-      name: "Loading",
-      description: "Set state of button is loading",
+      name: 'Loading',
+      description: 'Set state of button is loading',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     children: {
-      name: "Children",
-      description: "ReactNode",
+      name: 'Children',
+      description: 'ReactNode',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     icon: {
-      name: "Icon",
-      description: "ReactNode",
+      name: 'Icon',
+      description: 'ReactNode',
       defaultValue: undefined,
-      type: "symbol",
+      type: 'symbol',
     },
     href: {
-      name: "Href",
+      name: 'Href',
       description:
-        "The href attribute specifies the URL of the page the link goes to",
+        'The href attribute specifies the URL of the page the link goes to',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     target: {
-      name: "Target",
+      name: 'Target',
       description:
-        "The target attribute specifies where to open the linked document.",
+        'The target attribute specifies where to open the linked document.',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     size: {
-      name: "Size",
-      description: "Set the size of button",
-      defaultValue: "medium",
-      options: ["small", "medium", "large"],
+      name: 'Size',
+      description: 'Set the size of button',
+      defaultValue: 'medium',
+      options: ['small', 'medium', 'large'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     style: {
-      name: "Style",
-      description: "Set the style of button",
-      defaultValue: "primary",
-      options: ["flat", "primary", "warning", "danger"],
+      name: 'Style',
+      description: 'Set the style of button',
+      defaultValue: 'primary',
+      options: ['flat', 'primary', 'warning', 'danger'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     fill: {
-      name: "Fill",
-      description: "Option to fit button width to its parent width",
+      name: 'Fill',
+      description: 'Option to fit button width to its parent width',
       defaultValue: false,
     },
     shape: {
-      name: "Shape",
-      description: "Can be set button shape",
-      defaultValue: "round",
-      options: ["round", "circle"],
+      name: 'Shape',
+      description: 'Can be set button shape',
+      defaultValue: 'round',
+      options: ['round', 'circle'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     outline: {
-      name: "Outline",
-      description: "The type attribute specifies the type of button",
+      name: 'Outline',
+      description: 'The type attribute specifies the type of button',
       defaultValue: false,
-      type: "boolean",
+      type: 'boolean',
     },
     onClick: {
-      name: "OnClick",
-      description: "Set the handler to handle click event",
+      name: 'OnClick',
+      description: 'Set the handler to handle click event',
       defaultValue: undefined,
-      action: "clicked",
+      action: 'clicked',
     },
   },
 } as ComponentMeta<typeof Button>;
@@ -131,7 +131,7 @@ HelloBinyal.args = {
   disabled: false,
   tabIndex: 1,
   loading: false,
-  children: "Hello Binyal",
+  children: 'Hello Binyal',
   icon: <FontAwesomeIcon icon={faCoffee} />,
   href: undefined,
   target: undefined,
@@ -140,7 +140,7 @@ HelloBinyal.args = {
   fill: true,
   shape: Button.shape.round,
   outline: false,
-  onClick: action("clicked"),
+  onClick: action('clicked'),
 };
 
 export const ButtonIcon = Template.bind({});
@@ -154,18 +154,18 @@ ButtonIcon.args = {
 
 export const Link = Template.bind({});
 Link.args = {
-  children: "Redirect to Binyal",
-  href: "https://github.com/Binh-NA/binyal",
-  target: "_blank",
+  children: 'Redirect to Binyal',
+  href: 'https://github.com/Binh-NA/binyal',
+  target: '_blank',
   size: Button.size.medium,
   type: undefined,
 };
 
 export const LinkOutline = Template.bind({});
 LinkOutline.args = {
-  children: "Redirect to Binyal",
-  href: "https://github.com/Binh-NA/binyal",
-  target: "_blank",
+  children: 'Redirect to Binyal',
+  href: 'https://github.com/Binh-NA/binyal',
+  target: '_blank',
   size: Button.size.medium,
   type: undefined,
   outline: true,

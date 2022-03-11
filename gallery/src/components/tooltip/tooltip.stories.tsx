@@ -1,86 +1,86 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Tooltip from "../../../../binyal/src/components/tooltip";
-import { Flex } from "../../../../binyal/src/components";
-import { Placement } from "../../../../binyal/src/common/placement";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Tooltip from '../../../../binyal/src/components/tooltip';
+import { Flex } from '../../../../binyal/src/components';
+import { Placement } from '../../../../binyal/src/common/placement';
 
 export default {
-  title: "Components/Tooltip",
+  title: 'Components/Tooltip',
   component: Tooltip,
   argTypes: {
     className: {
-      name: "ClassName",
-      description: "Set the class for config checkbox",
+      name: 'ClassName',
+      description: 'Set the class for config checkbox',
       defaultValue: undefined,
-      type: "string",
+      type: 'string',
     },
     size: {
-      name: "Size",
-      description: "Set the size of checkbox",
-      defaultValue: "medium",
-      options: ["small", "medium", "large"],
+      name: 'Size',
+      description: 'Set the size of checkbox',
+      defaultValue: 'medium',
+      options: ['small', 'medium', 'large'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     style: {
-      name: "Style",
-      description: "Set the style of checkbox",
-      defaultValue: "primary",
-      options: ["flat", "primary", "warning", "danger"],
+      name: 'Style',
+      description: 'Set the style of checkbox',
+      defaultValue: 'primary',
+      options: ['flat', 'primary', 'warning', 'danger'],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     placement: {
-      name: "Placement",
-      description: "Set the placement of tooltip",
+      name: 'Placement',
+      description: 'Set the placement of tooltip',
       options: [
-        "top",
-        "top-start",
-        "top-end",
-        "bottom",
-        "bottom-start",
-        "bottom-end",
-        "left",
-        "left-start",
-        "left-end",
-        "right",
-        "right-start",
-        "right-end",
+        'top',
+        'top-start',
+        'top-end',
+        'bottom',
+        'bottom-start',
+        'bottom-end',
+        'left',
+        'left-start',
+        'left-end',
+        'right',
+        'right-start',
+        'right-end',
       ],
       control: {
-        type: "select",
+        type: 'select',
       },
     },
     title: {
-      name: "Title",
-      description: "`string` | `react element`",
-      type: "symbol",
+      name: 'Title',
+      description: '`string` | `react element`',
+      type: 'symbol',
     },
     children: {
-      name: "Children",
-      description: "`react element`",
-      type: "symbol",
-    }
+      name: 'Children',
+      description: '`react element`',
+      type: 'symbol',
+    },
   },
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <Tooltip {...args} />
-)
+);
 
 export const Simple = Template.bind({});
 Simple.args = {
   children: <span>Binyal</span>,
-  title: "I Love Binyal",
-}
+  title: 'I Love Binyal',
+};
 
 const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
   <div
     style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
       gap: 64,
       marginTop: 64,
       marginBottom: 64,
@@ -91,13 +91,13 @@ const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
       Tooltip.placement.top,
       Tooltip.placement.topEnd,
       Tooltip.placement.leftEnd,
-      "",
+      '',
       Tooltip.placement.rightEnd,
       Tooltip.placement.left,
-      "",
+      '',
       Tooltip.placement.right,
       Tooltip.placement.leftStart,
-      "",
+      '',
       Tooltip.placement.rightStart,
       Tooltip.placement.bottomStart,
       Tooltip.placement.bottom,
@@ -107,9 +107,9 @@ const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
         <div
           key={key}
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           <Tooltip
@@ -126,9 +126,9 @@ const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
         </div>
       ) : (
         <div></div>
-      )
+      ),
     )}
   </div>
 );
 export const All = TemplateAll.bind({});
-All.args = {}
+All.args = {};
