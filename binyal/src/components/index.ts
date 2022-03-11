@@ -12,6 +12,7 @@ export { default as Toggle } from './toggle';
 export { default as ButtonGroup } from './button/button-group';
 export { default as Rating } from './rating';
 export { default as CustomizedRadio } from './customized/radio';
+export { default as Tooltip } from './tooltip';
 
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;

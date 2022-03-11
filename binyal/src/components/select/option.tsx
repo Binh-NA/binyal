@@ -69,3 +69,5 @@ export const Option = <T,>(props: OptionProps<T>): React.ReactElement => {
     </div>
   );
 };
+
+export const MemoizedOption = React.memo(Option) as typeof Option;

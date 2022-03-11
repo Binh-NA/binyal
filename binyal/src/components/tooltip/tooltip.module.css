@@ -1,0 +1,8 @@
+.c_t {
+  display: inline-block;
+}
+
+.c {
+  padding: 2px 4px;
+  border-radius: var(--by-radius);
+}

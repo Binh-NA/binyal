@@ -38,5 +38,10 @@
   "homepage": "https://github.com/Binh-NA/binyal#readme",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

@@ -6,7 +6,7 @@
     "rollup": "rollup -c",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .eslintignore",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   },
   "keywords": [
     "binyal"
