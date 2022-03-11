@@ -62,19 +62,19 @@ export default {
       name: "Children",
       description: "`react element`",
       type: "symbol",
-    },
+    }
   },
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <Tooltip {...args} />
-);
+)
 
 export const Simple = Template.bind({});
 Simple.args = {
   children: <span>Binyal</span>,
   title: "I Love Binyal",
-};
+}
 
 const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
   <div
@@ -130,5 +130,5 @@ const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
     )}
   </div>
 );
-export const All = TemplateAll.bind({});
-All.args = {};
+export const All = TemplateAll.bind({})
+All.args = {}
