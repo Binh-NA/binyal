@@ -130,5 +130,5 @@ const TemplateAll: ComponentStory<typeof Tooltip> = (args) => (
     )}
   </div>
 );
-export const All = TemplateAll.bind({})
-All.args = {}
+export const All = TemplateAll.bind({});
+All.args = {};
