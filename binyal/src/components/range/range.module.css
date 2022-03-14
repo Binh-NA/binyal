@@ -1,0 +1,180 @@
+.r {
+  width: 100%;
+  position: relative;
+}
+
+.r .current input {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  opacity: 0;
+}
+
+.r .rail {
+  width: 100%;
+  display: block;
+  border-radius: var(--by-radius);
+}
+
+.r .track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--by-radius);
+}
+
+.r .current {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 0;
+}
+
+.r .current .cursor {
+  border-radius: var(--by-radius-round);
+  display: block;
+  cursor: pointer;
+}
+
+/* style */
+.flat .rail {
+  background-color: var(--by-gray-3);
+}
+
+.flat .track {
+  background-color: var(--by-gray-6);
+}
+
+.flat .current .cursor {
+  background-color: var(--by-gray-6);
+  box-shadow: var(--by-gray-0-5) 0px 3px 1px -2px,
+    var(--by-gray-0-5) 0px 2px 2px 0px, var(--by-gray-0-5) 0px 1px 5px 0px;
+}
+
+.flat .current .cursor:hover {
+  box-shadow: 0 0 0 8px var(--by-gray-0-5);
+}
+
+.primary .rail {
+  background-color: var(--by-binyal-color-3);
+}
+
+.primary .track {
+  background-color: var(--by-binyal-color-6);
+}
+
+.primary .current .cursor {
+  background-color: var(--by-binyal-color-6);
+  box-shadow: var(--by-binyal-color-0-5) 0px 3px 1px -2px,
+    var(--by-binyal-color-0-5) 0px 2px 2px 0px,
+    var(--by-binyal-color-0-5) 0px 1px 5px 0px;
+}
+
+.primary .current .cursor:hover {
+  box-shadow: 0 0 0 8px var(--by-binyal-color-0-5);
+}
+
+.warning .rail {
+  background-color: var(--by-yellow-1);
+}
+
+.warning .track {
+  background-color: var(--by-yellow-4);
+}
+
+.warning .current .cursor {
+  background-color: var(--by-yellow-4);
+  box-shadow: var(--by-yellow-0-5) 0px 3px 1px -2px,
+    var(--by-yellow-0-5) 0px 2px 2px 0px, var(--by-yellow-0-5) 0px 1px 5px 0px;
+}
+
+.warning .current .cursor:hover {
+  box-shadow: 0 0 0 8px var(--by-yellow-0-5);
+}
+
+.danger .rail {
+  background-color: var(--by-red-3);
+}
+
+.danger .track {
+  background-color: var(--by-red-6);
+}
+
+.danger .current .cursor {
+  background-color: var(--by-red-6);
+  box-shadow: var(--by-red-0-5) 0px 3px 1px -2px,
+    var(--by-red-0-5) 0px 2px 2px 0px, var(--by-red-0-5) 0px 1px 5px 0px;
+}
+
+.danger .current .cursor:hover {
+  box-shadow: 0 0 0 8px var(--by-red-0-5);
+}
+
+/* size */
+.r.large {
+  margin: calc(var(--by-checkbox-large-height) * 0.35)
+    calc(var(--by-checkbox-large-height) * 0.5);
+}
+
+.large .rail,
+.large .track {
+  height: calc(var(--by-checkbox-large-height) * 0.3);
+}
+
+.large .current {
+  top: calc(var(--by-checkbox-large-height) * -0.35);
+  bottom: calc(var(--by-checkbox-large-height) * -0.35);
+}
+
+.large .current .cursor {
+  width: var(--by-checkbox-large-height);
+  height: var(--by-checkbox-large-height);
+}
+
+.r.medium {
+  margin: calc(var(--by-checkbox-medium-height) * 0.35)
+    calc(var(--by-checkbox-medium-height) * 0.5);
+}
+
+.medium .rail,
+.medium .track {
+  height: calc(var(--by-checkbox-medium-height) * 0.3);
+}
+
+.medium .current {
+  top: calc(var(--by-checkbox-medium-height) * -0.35);
+  bottom: calc(var(--by-checkbox-medium-height) * -0.35);
+}
+
+.medium .current .cursor {
+  width: var(--by-checkbox-medium-height);
+  height: var(--by-checkbox-medium-height);
+}
+
+.r.small {
+  margin: calc(var(--by-checkbox-small-height) * 0.35)
+    calc(var(--by-checkbox-small-height) * 0.5);
+}
+
+.small .rail,
+.small .track {
+  height: calc(var(--by-checkbox-small-height) * 0.3);
+}
+
+.small .current {
+  top: calc(var(--by-checkbox-small-height) * -0.35);
+  bottom: calc(var(--by-checkbox-small-height) * -0.35);
+}
+
+.small .current .cursor {
+  width: var(--by-checkbox-small-height);
+  height: var(--by-checkbox-small-height);
+}
+
+/* disabled */
+
+.r.disabled {
+  pointer-events: none;
+  opacity: 0.75;
+}
