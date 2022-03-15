@@ -2,19 +2,30 @@
 
 Create simple template component support for your project.
 
-## Currently
+## Components
 
-> Empty
-> Gallery
+- Button
+- GroupButton
+- CheckBox
+- Radio
+- Flex
+- Input
+- Select
+- Toggle
+- Loading
+- Rating
+- Space
+- Tooltip
 
-## New Features
+## Futures
 
-You can also:
+- Table
 
-> Button
-> Select
-> Checkbox
-> Radio
+## Example Usage
+
+```
+import { Button } from "binyal";
+```
 
 ## Tech
 
@@ -86,6 +97,6 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 ## License
 
-MIT
+`MIT`
 
 **Thanks.**
