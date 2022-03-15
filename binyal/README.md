@@ -8,20 +8,31 @@ Create simple template component support for your project.
 ## Components
 
 - Button
-- Select
+- GroupButton
+- CheckBox
+- Radio
+- Flex
 - Input
-- Checkbox & Radio button
-
-## Future
-
-- Group Button
+- Select
 - Toggle
+- Loading
+- Rating
+- Space
+- Tooltip
+
+## Futures
+
+- Table
 
 ## Example Usage
 
 ```
 import { Button } from "binyal";
 ```
+
+## Developers
+
+`Binh-NA`
 
 ## License
 

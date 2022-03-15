@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.r .current input {
+.r input {
   position: absolute;
   width: 0px;
   height: 0px;
@@ -132,6 +132,11 @@
   height: var(--by-checkbox-large-height);
 }
 
+.large input {
+  top: calc(var(--by-checkbox-large-height) * -0.35);
+  left: calc(var(--by-checkbox-large-height) * 0.5);
+}
+
 .r.medium {
   margin: calc(var(--by-checkbox-medium-height) * 0.35)
     calc(var(--by-checkbox-medium-height) * 0.5);
@@ -152,6 +157,11 @@
   height: var(--by-checkbox-medium-height);
 }
 
+.medium input {
+  top: calc(var(--by-checkbox-medium-height) * -0.35);
+  left: calc(var(--by-checkbox-medium-height) * 0.5);
+}
+
 .r.small {
   margin: calc(var(--by-checkbox-small-height) * 0.35)
     calc(var(--by-checkbox-small-height) * 0.5);
@@ -170,6 +180,11 @@
 .small .current .cursor {
   width: var(--by-checkbox-small-height);
   height: var(--by-checkbox-small-height);
+}
+
+.small input {
+  top: calc(var(--by-checkbox-small-height) * -0.35);
+  left: calc(var(--by-checkbox-small-height) * 0.5);
 }
 
 /* disabled */
