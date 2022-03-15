@@ -92,43 +92,19 @@ const Template: ComponentStory<typeof Range> = (args) => {
   const [value, setValue] = React.useState<number | undefined>(
     args.value as number,
   );
-  const [values, setValues] = React.useState<{
-    start: number;
-    end: number;
-  }>();
 
   return (
-    <Flex direction={Flex.direction.col}>
-      <Flex>
-        <SpaceX size={100} />
-        <Range
-          {...args}
-          value={value}
-          setValue={(val) => {
-            setValue(val as number);
-            console.log(val);
-          }}
-        />
-        <SpaceX size={100} />
-      </Flex>
-      <Flex>
-        <SpaceX size={100} />
-        <Range
-          {...args}
-          value={values}
-          setValue={(val) => {
-            setValues(
-              val as {
-                start: number;
-                end: number;
-              },
-            );
-            console.log(val);
-          }}
-          multiple
-        />
-        <SpaceX size={100} />
-      </Flex>
+    <Flex>
+      <SpaceX size={100} />
+      <Range
+        {...args}
+        value={value}
+        setValue={(val) => {
+          setValue(val as number);
+          console.log(val);
+        }}
+      />
+      <SpaceX size={100} />
     </Flex>
   );
 };
@@ -137,3 +113,37 @@ export const Simple = Template.bind({});
 Simple.args = {
   value: 50,
 };
+
+const TemplateMultiple: ComponentStory<typeof Range> = (args) => {
+  const [values, setValues] = React.useState<{
+    start: number;
+    end: number;
+  }>({
+    start: 25,
+    end: 75,
+  });
+
+  return (
+    <Flex>
+      <SpaceX size={100} />
+      <Range
+        {...args}
+        value={values}
+        setValue={(val) => {
+          setValues(
+            val as {
+              start: number;
+              end: number;
+            },
+          );
+          console.log(val);
+        }}
+        multiple
+      />
+      <SpaceX size={100} />
+    </Flex>
+  );
+};
+
+export const Multiple = TemplateMultiple.bind({});
+Multiple.args = {};
