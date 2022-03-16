@@ -7,3 +7,4 @@ storybook-static
 docs
 .husky
 *.svg
+.prettierignore
