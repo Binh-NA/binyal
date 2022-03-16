@@ -14,6 +14,7 @@ export { default as Rating } from './rating';
 export { default as CustomizedRadio } from './customized/radio';
 export { default as Tooltip } from './tooltip';
 export { default as Progress } from './range';
+export { default as Table } from './table';
 
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;

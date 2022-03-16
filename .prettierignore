@@ -6,3 +6,4 @@ build
 storybook-static
 docs
 .husky
+*.svg

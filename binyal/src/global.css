@@ -107,6 +107,13 @@
   --by-checkbox-small-font: 11px;
 
   --by-border-arrow: 6px;
+
+  --by-table-padding-medium-x: 8px;
+  --by-table-padding-medium-y: 12px;
+  --by-table-padding-large-x: 12px;
+  --by-table-padding-large-y: 16px;
+  --by-table-padding-small-x: 4px;
+  --by-table-padding-small-y: 8px;
 }
 
 *:after {

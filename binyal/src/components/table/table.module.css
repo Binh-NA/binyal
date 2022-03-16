@@ -1,0 +1,190 @@
+.c {
+  overflow: auto;
+  display: inline-block;
+  max-width: 100%;
+  border-radius: var(--by-radius);
+}
+
+.c .t {
+  table-layout: auto;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-color: var(--by-gray-3);
+  color: var(--by-comfy-8);
+  font-size: var(--by-font-size);
+}
+
+.c .t tr th {
+  border-color: var(--by-gray-2);
+  border-style: solid;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-right-width: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1996;
+  background-color: var(--by-white);
+}
+
+.c .t tr:last-child th {
+  border-color: var(--by-gray-3);
+}
+
+.c .t tr td {
+  border-color: var(--by-gray-2);
+  border-style: solid;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-right-width: 0;
+  background-color: var(--by-white);
+}
+
+.c .t tr:first-child th:first-child {
+  border-radius: var(--by-radius) 0 0 0;
+}
+
+.c .t tr:first-child th:last-child {
+  border-radius: 0 var(--by-radius) 0 0;
+}
+
+.c .t tr:last-child td:first-child {
+  border-radius: 0 0 0 var(--by-radius);
+}
+
+.c .t tr:last-child td:last-child {
+  border-radius: 0 0 var(--by-radius) 0;
+}
+
+/* fill */
+.c.fill {
+  display: block;
+}
+.fill .t {
+  width: 100%;
+}
+
+/* striped */
+.striped .t tr td {
+  border-bottom-width: 0;
+}
+
+/* border */
+.c.border .t tr th {
+  border-color: var(--by-gray-2);
+  border-bottom-color: var(--by-gray-3);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0;
+}
+
+.c.border .t tr th:last-child {
+  border-right-width: 1px;
+}
+
+.c.border .t tr td {
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0;
+}
+
+.c.border .t tr td:last-child {
+  border-right-width: 1px;
+}
+
+/* shadow */
+.shadow {
+  box-shadow: 0 0px 4px -1px var(--by-gray-0-5),
+    0 1px 4px -1px var(--by-gray-0-5);
+}
+
+.border.shadow {
+  box-shadow: 0 2px 4px -1px var(--by-gray-0-5),
+    0 1px 2px -1px var(--by-gray-0-5);
+}
+
+/* align */
+.align_left {
+  text-align: left;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.align_right {
+  text-align: right;
+}
+
+/* size */
+.large .t tr th,
+.large .t tr td {
+  padding: var(--by-table-padding-large-x) var(--by-table-padding-large-y);
+}
+
+.medium .t tr th,
+.medium .t tr td {
+  padding: var(--by-table-padding-medium-x) var(--by-table-padding-medium-y);
+}
+
+.small .t tr th,
+.small .t tr td {
+  padding: var(--by-table-padding-small-x) var(--by-table-padding-small-y);
+}
+
+/* style */
+.c.flat .t tr:hover td {
+  background-color: var(--by-comfy-1);
+}
+
+.c.flat.striped .t tr:hover td,
+.c.flat.striped .t tr:nth-child(2n - 2):hover td {
+  background-color: var(--by-comfy-2);
+}
+
+.c.flat.striped .t tr:nth-child(2n - 2) td {
+  background-color: var(--by-comfy-1);
+}
+
+.c.primary .t tr:hover td {
+  background-color: var(--by-binyal-color);
+}
+
+.c.primary.striped .t tr:hover td,
+.c.primary.striped .t tr:nth-child(2n - 2):hover td {
+  background-color: var(--by-binyal-color-1);
+}
+
+.c.primary.striped .t tr:nth-child(2n - 2) td {
+  background-color: var(--by-binyal-color);
+}
+
+.c.warning .t tr:hover td {
+  background-color: var(--by-yellow);
+}
+
+.c.warning.striped .t tr:hover td,
+.c.warning.striped .t tr:nth-child(2n - 2):hover td {
+  background-color: var(--by-yellow-1);
+}
+
+.c.warning.striped .t tr:nth-child(2n - 2) td {
+  background-color: var(--by-yellow);
+}
+
+.c.danger .t tr:hover td {
+  background-color: var(--by-red);
+}
+
+.c.danger.striped .t tr:hover td,
+.c.danger.striped .t tr:nth-child(2n - 2):hover td {
+  background-color: var(--by-red-1);
+}
+
+.c.danger.striped .t tr:nth-child(2n - 2) td {
+  background-color: var(--by-red);
+}

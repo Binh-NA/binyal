@@ -5,3 +5,4 @@ yarn.lock
 build
 storybook-static
 docs
+*.svg

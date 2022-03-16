@@ -42,6 +42,6 @@
     }
   },
   "lint-staged": {
-    "**/*": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
+    "*.+(js|jsx|ts|tsx|json)": "prettier --ignore-path .prettierignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   }
 }

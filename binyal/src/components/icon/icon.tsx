@@ -7,7 +7,8 @@ type IconSymbol =
   | 'star'
   | 'starBorder'
   | 'heart'
-  | 'heartBorder';
+  | 'heartBorder'
+  | 'info';
 
 const __ICON_IDS: Record<IconSymbol, string> = {
   arrowDown: 'by-i-arrow-down',
@@ -16,6 +17,7 @@ const __ICON_IDS: Record<IconSymbol, string> = {
   starBorder: 'by-i-star-border',
   heart: 'by-i-heart',
   heartBorder: 'by-i-heart-border',
+  info: 'by-i-info',
 };
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {

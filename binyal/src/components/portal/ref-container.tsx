@@ -1,5 +1,6 @@
 import React from 'react';
 import Css from './ref-container.module.css';
+import CssScroll from '../../common/scroll.module.css';
 import { Portal } from './index';
 import { useScroll } from '../../hooks/scroll';
 
@@ -75,7 +76,7 @@ export const RefContainer = <T extends HTMLElement>(
     style.top = position?.y;
   }
 
-  const classes = [Css.c, Css.scroll_vertical];
+  const classes = [Css.c, CssScroll.scroll_vertical];
   if (props.isShadow) classes.push(Css.c_shadow);
 
   return (
