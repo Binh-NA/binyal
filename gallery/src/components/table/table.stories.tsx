@@ -51,42 +51,48 @@ export default {
         type: 'select',
       },
     },
-    // fill: {
-    //   name: 'Fill',
-    //   description: 'Option to fit Toggle width to its parent width',
-    //   defaultValue: false,
-    //   type: 'boolean',
-    // },
-    // disabled: {
-    //   name: 'Disable',
-    //   description: 'Set status of Toggle is disable',
-    //   defaultValue: false,
-    //   type: 'boolean',
-    // },
-    // defaultChecked: {
-    //   name: 'DefaultChecked',
-    //   description: 'Set default value of Toggle is checked',
-    //   defaultValue: false,
-    //   type: 'boolean',
-    // },
-    // label: {
-    //   name: 'Label',
-    //   description: 'the label of an check element',
-    //   defaultValue: undefined,
-    //   type: 'string',
-    // },
-    // setChecked: {
-    //   name: 'SetChecked',
-    //   description: 'Event change value',
-    //   defaultValue: undefined,
-    //   action: 'setChecked',
-    // },
-    // onChange: {
-    //   name: 'OnChange',
-    //   description: 'Set the handler to handle change event',
-    //   defaultValue: undefined,
-    //   action: 'OnChange',
-    // },
+    height: {
+      name: 'Height',
+      description: 'Set height of table',
+      defaultValue: false,
+      type: 'string',
+    },
+    fill: {
+      name: 'Fill',
+      description: 'Option to fit Toggle width to its parent width',
+      defaultValue: false,
+      type: 'boolean',
+    },
+    striped: {
+      name: 'Striped',
+      description: 'Css a table is striped',
+      defaultValue: false,
+      type: 'boolean',
+    },
+    border: {
+      name: 'Border',
+      description: 'Css border for `tr` `td` of table',
+      defaultValue: false,
+      type: 'boolean',
+    },
+    shadow: {
+      name: 'Shadow',
+      description: 'Css a table is shadow',
+      defaultValue: undefined,
+      type: 'boolean',
+    },
+    rows: {
+      name: 'Rows',
+      description: 'Set rows data',
+      defaultValue: undefined,
+      type: 'symbol',
+    },
+    columns: {
+      name: 'Columns',
+      description: 'Set columns table',
+      defaultValue: undefined,
+      type: 'symbol',
+    },
   },
 } as ComponentMeta<typeof Table>;
 
@@ -340,16 +346,241 @@ const columns: TableColumn<Coin>[] = [
 
 const Template: ComponentStory<typeof Table> = (args) => (
   <div style={{ whiteSpace: 'nowrap' }}>
-    <Table<Coin>
-      {...args}
-      columns={columns}
-      rows={rows}
-      fill
-      shadow
-      height="calc(100vh - 30px)"
-    />
+    <Table<Coin> {...args} columns={columns} rows={rows} />
   </div>
 );
 
 export const Simple = Template.bind({});
-Simple.args = {};
+Simple.args = {
+  border: true,
+};
+
+export const Flat = Template.bind({});
+Flat.args = {
+  shadow: true,
+};
+
+export const Fill = Template.bind({});
+Fill.args = {
+  shadow: true,
+  fill: true,
+};
+
+export const Striped = Template.bind({});
+Striped.args = {
+  shadow: true,
+  fill: true,
+  striped: true,
+};
+
+export const Height = Template.bind({});
+Height.args = {
+  shadow: true,
+  fill: true,
+  height: 'calc(100vh - 300px)',
+};
+
+const stickyColumns: TableColumn<Coin>[] = [
+  {
+    title: '#',
+    render: (_, index) => index + 1,
+    fixed: {
+      left: true,
+    },
+  },
+  {
+    title: 'Name',
+    render: 'name',
+  },
+  {
+    title: 'Price',
+    align: 'right',
+    render: (coin) => `$${formatMoney(coin.price)}`,
+    fixed: {
+      left: true,
+    },
+  },
+  {
+    title: '24h %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_24 === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_24)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '7d %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_7d === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_7d)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '24h %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_24 === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_24)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '7d %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_7d === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_7d)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '24h %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_24 === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_24)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '7d %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_7d === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_7d)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '24h %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_24 === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_24)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '7d %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_7d === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_7d)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '24h %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_24 === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_24)}%`}
+      </span>
+    ),
+  },
+  {
+    title: '7d %',
+    align: 'right',
+    render: (coin) => (
+      <span style={{ color: coin.type_7d === 'up' ? '#16c784' : '#ea3943' }}>
+        {`${formatMoney(coin.percent_7d)}%`}
+      </span>
+    ),
+  },
+  {
+    title: (
+      <Flex justifyContent={Flex.align.end} alignItems={Flex.align.center}>
+        <span>Market Cap</span>
+        <SpaceX size={8} />
+        <Tooltip
+          style="flat"
+          title={
+            <div style={{ padding: '6px 12px', maxWidth: 400 }}>
+              <p>
+                The total market value of a cryptocurrency's circulating supply.
+              </p>
+              <p>
+                It is analogous to the free-float capitalization in the stock
+                market.
+              </p>
+              <p>Market Cap = Current Price x Circulating Supply.</p>
+            </div>
+          }
+          placement={Tooltip.placement.bottom}
+        >
+          <Icon symbol="info" />
+        </Tooltip>
+      </Flex>
+    ),
+    align: 'right',
+    render: (coin) => `$${formatMoney(coin.market_cap)}`,
+  },
+  {
+    title: (
+      <Flex justifyContent={Flex.align.end} alignItems={Flex.align.center}>
+        <span>Volume (24h)</span>
+        <SpaceX size={8} />
+        <Tooltip
+          style="flat"
+          title={
+            <div style={{ padding: '6px 12px', maxWidth: 400 }}>
+              <p>A measure of how much of a cryptocurrency</p>
+              <p>was traded in the last 24 hours.</p>
+            </div>
+          }
+          placement={Tooltip.placement.bottom}
+        >
+          <Icon symbol="info" />
+        </Tooltip>
+      </Flex>
+    ),
+    align: 'right',
+    render: (coin) => `$${formatMoney(coin.volume)}`,
+  },
+  {
+    title: (
+      <Flex justifyContent={Flex.align.end} alignItems={Flex.align.center}>
+        <span>Circulating Supply</span>
+        <SpaceX size={8} />
+        <Tooltip
+          style="flat"
+          title={
+            <div style={{ padding: '6px 12px', maxWidth: 400 }}>
+              <p>
+                The amount of coins that are circulating in the market and are
+                in public hands.
+              </p>
+              <p>It is analogous to the flowing shares in the stock market.</p>
+            </div>
+          }
+          placement={Tooltip.placement.bottomEnd}
+        >
+          <Icon symbol="info" />
+        </Tooltip>
+      </Flex>
+    ),
+    align: 'right',
+    fixed: { right: true },
+    render: (coin) => (
+      <span style={{ textTransform: 'uppercase' }}>{`${formatMoney(
+        coin.circulating_supply,
+      )} ${coin.id}`}</span>
+    ),
+  },
+];
+
+const TemplateSticky: ComponentStory<typeof Table> = (args) => (
+  <div style={{ whiteSpace: 'nowrap' }}>
+    <Table<Coin> {...args} columns={stickyColumns} rows={rows} />
+  </div>
+);
+
+export const Sticky = TemplateSticky.bind({});
+Sticky.args = {
+  shadow: true,
+  fill: true,
+  height: 'calc(100vh - 100px)',
+};

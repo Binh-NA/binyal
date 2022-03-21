@@ -8,10 +8,16 @@ export type Title =
 
 export type Align = 'left' | 'center' | 'right';
 
+export type Fixed = {
+  left?: boolean;
+  right?: boolean;
+};
+
 export interface TableColumn<T> {
   name?: string;
   className?: string;
   align?: Align;
+  fixed?: Fixed;
   title: Title;
   render: keyof T | ((row: T, index: number) => React.ReactNode);
 }
@@ -27,4 +33,6 @@ export interface TableProps<T> extends ByElement {
   // contents
   rows?: T[];
   columns: TableColumn<T>[];
+  // keys
+  rowKey?: (row: T, index: number) => string;
 }
