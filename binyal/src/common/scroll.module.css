@@ -1,21 +1,28 @@
 /* scroll */
 .scroll_vertical {
   scrollbar-width: thin;
-  scrollbar-width: var(--by-gray-3);
+  scrollbar-color: var(--by-gray-3);
 }
 
 .scroll_vertical::-webkit-scrollbar {
   width: 7px;
   height: 7px;
-  cursor: pointer;
 }
+
 .scroll_vertical::-webkit-scrollbar-track {
   background-color: var(--by-gray);
-  cursor: pointer;
 }
+
 .scroll_vertical::-webkit-scrollbar-thumb {
-  cursor: pointer;
   background-color: var(--by-gray-3);
-  padding: 0px 2px;
   border-radius: var(--by-radius);
+}
+
+.scroll_vertical::-webkit-scrollbar-thumb:hover {
+  background-color: var(--by-gray-4);
+}
+
+.scroll_vertical::-webkit-scrollbar-corner {
+  background-color: var(--by-gray);
+  border-radius: 0 0 var(--by-radius) 0;
 }
