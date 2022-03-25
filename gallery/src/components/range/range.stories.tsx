@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Range from '../../../../binyal/src/components/range';
-import { Button, Flex, SpaceX } from '../../../../binyal/src/components';
+import { Range, Flex, SpaceX } from 'binyal';
 
 export default {
   title: 'Components/Range',

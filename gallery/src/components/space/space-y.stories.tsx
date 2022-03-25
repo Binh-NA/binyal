@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SpaceY as SY } from '../../../../binyal/src/components';
+import { SpaceY as SY } from 'binyal';
 
 export default {
   title: 'Components/Space',

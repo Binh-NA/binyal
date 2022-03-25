@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Flex from '../../../../binyal/src/components/flex';
+import { Flex } from 'binyal';
 
 export default {
   title: 'Components/Flex',

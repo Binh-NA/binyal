@@ -1,9 +1,2 @@
-import Radio from './radio';
-import RadioGroup from './group';
-
-const R = {
-  Radio,
-  RadioGroup,
-};
-
-export default R;
+export { default as Radio, RadioProps } from './radio';
+export { default as RadioGroup, RadioGroupProps } from './group';

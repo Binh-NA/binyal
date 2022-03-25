@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Toggle from '../../../../binyal/src/components/toggle';
+import { Toggle } from 'binyal';
 
 export default {
   title: 'Components/Toggle',

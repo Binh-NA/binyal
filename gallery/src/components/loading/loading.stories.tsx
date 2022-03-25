@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Loading as LoadingComponent } from '../../../../binyal/src/components';
+import { Loading as LoadingComponent } from 'binyal';
 
 export default {
   title: 'Components/Loading',

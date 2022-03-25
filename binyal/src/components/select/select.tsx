@@ -4,9 +4,9 @@ import {
   AutoComplete,
   withStaticProps,
 } from '../../common/by-element';
-import Loading from '../loading';
+import { Loading } from '../loading';
 import SelectCss from './select.module.css';
-import Icon from '../icon';
+import { Icon } from '../icon';
 import { useRefElement } from '../../hooks/ref';
 import { createEvent } from '../../events/event';
 import { Option } from './option';

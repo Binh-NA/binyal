@@ -1,6 +1,6 @@
 import React from 'react';
 import { Direction, DIRECTION } from '../../common/direction';
-import Flex from '../flex';
+import { Flex } from '../flex';
 import Css from './button.module.css';
 
 export interface ButtonGroupProps {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Rating } from '../../../../binyal/src/components';
-import Icon from '../../../../binyal/src/components/icon';
+import { Rating, Icon } from 'binyal';
 
 export default {
   title: 'Components/Rating',
