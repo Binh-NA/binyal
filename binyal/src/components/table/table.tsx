@@ -7,6 +7,7 @@ import CssScroll from '../../common/scroll.module.css';
 import { useResizeWidth } from '../../hooks/resize';
 import { TableContainer, TableContext } from './context';
 import { getBorderStyle, getStyle } from './config-class';
+import { ByElement } from '../../common/by-element';
 
 const configClass = {
   size: {
@@ -117,5 +118,15 @@ export const TableProvider = <T,>(props: TableProps<T>): React.ReactElement => (
     <Table {...props} />
   </TableContainer>
 );
+
+TableProvider.style = ByElement.style;
+TableProvider.size = ByElement.size;
+TableProvider.cols = {
+  align: {
+    left: 'left',
+    right: 'right',
+    center: 'center',
+  },
+};
 
 export default TableProvider;
