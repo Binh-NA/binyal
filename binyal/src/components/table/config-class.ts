@@ -100,13 +100,13 @@ export const getBorderStyle = (
   if (fixed.left) {
     const left = calcLeft(index, stickies);
     if (left < (scroll?.left ?? 0)) {
-      style.borderRightWidth = 1;
+      style.boxShadow = '1px 0 var(--by-gray-2)';
     }
   }
   if (fixed.right) {
     const right = calcRight(index, max, stickies);
     if (right < (scroll?.right ?? 0)) {
-      style.borderLeftWidth = 1;
+      style.boxShadow = '-1px 0 var(--by-gray-2)';
     }
   }
   return style;
