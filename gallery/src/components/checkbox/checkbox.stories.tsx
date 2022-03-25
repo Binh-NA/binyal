@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import CheckBox from '../../../../binyal/src/components/checkbox';
+import { CheckBox } from 'binyal';
 
 export default {
   title: 'Components/CheckBox',

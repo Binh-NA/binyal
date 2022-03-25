@@ -1,6 +1,6 @@
 import React from 'react';
 import { ByElement } from '../../common/by-element';
-import Flex from '../flex';
+import { Flex } from '../flex';
 import { SpaceX, SpaceY } from '../space/space';
 import Radio from './radio';
 import { Direction, DIRECTION } from '../../common/direction';

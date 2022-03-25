@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SpaceX as SX } from '../../../../binyal/src/components';
+import { SpaceX as SX } from 'binyal';
 
 export default {
   title: 'Components/Space',

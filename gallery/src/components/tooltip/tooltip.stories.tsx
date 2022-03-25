@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Tooltip from '../../../../binyal/src/components/tooltip';
-import { Flex } from '../../../../binyal/src/components';
-import { Placement } from '../../../../binyal/src/common/placement';
+import { Tooltip, Flex } from 'binyal';
+import type { Placement } from '../../../../binyal/src/common/placement';
 
 export default {
   title: 'Components/Tooltip',

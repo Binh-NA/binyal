@@ -1,13 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {
-  Flex,
-  Table,
-  Tooltip,
-  SpaceX,
-} from '../../../../binyal/src/components';
-import { TableColumn } from '../../../../binyal/src/components/table/interface';
-import Icon from '../../../../binyal/src/components/icon';
+import { Flex, Table, Tooltip, SpaceX, TableColumn, Icon } from 'binyal';
 import { formatMoney } from '../../../../binyal/src/utils';
 
 interface Coin {

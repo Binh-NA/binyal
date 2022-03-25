@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Text from '../../../../binyal/src/components/text';
+import { Text } from 'binyal';
 
 export default {
   title: 'Components/Text',

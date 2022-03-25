@@ -4,7 +4,7 @@ import LinkCss from './link.module.css';
 import { ByElement, withStaticProps } from '../../common/by-element';
 import { SpaceX } from '../space/space';
 ('../space');
-import Loading from '../loading';
+import { Loading } from '../loading';
 import { Size } from '../../common/size';
 
 type ButtonType = 'button' | 'submit' | 'reset';

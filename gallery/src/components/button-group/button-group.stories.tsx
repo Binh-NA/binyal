@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import ButtonGroup from '../../../../binyal/src/components/button/button-group';
-import Button from '../../../../binyal/src/components/button';
+import { Button, ButtonGroup } from 'binyal';
 
 export default {
   title: 'Components/ButtonGroup',

@@ -1,10 +1,10 @@
 import React, { ChangeEvent } from 'react';
 import { ByElement } from '../../common/by-element';
 import { Direction, DIRECTION } from '../../common/direction';
-import CustomizedRadio from '../customized/radio';
-import Flex from '../flex';
+import { CustomizedRadio } from '../customized/radio';
+import { Flex } from '../flex';
 import Css from '../customized/radio/radio.module.css';
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 export interface RatingProps extends ByElement {
   // properties

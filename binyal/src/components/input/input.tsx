@@ -4,7 +4,7 @@ import {
   AutoComplete,
   withStaticProps,
 } from '../../common/by-element';
-import Loading from '../loading';
+import { Loading } from '../loading';
 import InputCss from './input.module.css';
 import { useRefElement } from '../../hooks/ref';
 

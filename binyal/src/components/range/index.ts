@@ -1,1 +1,1 @@
-export { default } from './range';
+export { default as Range, RangeProps } from './range';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Select from '../../../../binyal/src/components/select/select';
+import { Select } from 'binyal';
 
 export default {
   title: 'Components/Select',
