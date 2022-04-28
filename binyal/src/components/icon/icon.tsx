@@ -3,6 +3,8 @@ import Icons from '../../icon/icon.svg';
 
 type IconSymbol =
   | 'arrowDown'
+  | 'arrowLeft'
+  | 'arrowRight'
   | 'close'
   | 'star'
   | 'starBorder'
@@ -12,6 +14,8 @@ type IconSymbol =
 
 const __ICON_IDS: Record<IconSymbol, string> = {
   arrowDown: 'by-i-arrow-down',
+  arrowLeft: 'by-i-arrow-left',
+  arrowRight: 'by-i-arrow-right',
   close: 'by-i-close',
   star: 'by-i-star',
   starBorder: 'by-i-star-border',

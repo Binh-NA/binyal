@@ -15,6 +15,7 @@ export * from './range';
 export * from './table';
 export * from './icon';
 export * from './radio';
+export * from './paging';
 
 export const SpaceX = Space.SpaceX;
 export const SpaceY = Space.SpaceY;

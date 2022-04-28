@@ -1,0 +1,17 @@
+.c {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.c.large {
+  gap: var(--by-padding-large-y);
+}
+
+.c.medium {
+  gap: var(--by-padding-medium-y);
+}
+
+.c.small {
+  gap: var(--by-padding-small-y);
+}

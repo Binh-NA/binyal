@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ByElement,
-  AutoComplete,
-  withStaticProps,
-} from '../../common/by-element';
+import { ByElement, AutoComplete } from '../../common/by-element';
 import { Loading } from '../loading';
 import SelectCss from './select.module.css';
 import { Icon } from '../icon';
@@ -168,7 +164,7 @@ const SelectMultipleContent = <T,>(
 
 const SelectContainer = <T,>(
   props: SelectProps<T>,
-  ref?: React.ForwardedRef<HTMLSelectElement>,
+  ref?: React.Ref<HTMLSelectElement>,
 ) => {
   const sRef = useRefElement<HTMLSelectElement>(ref);
   const dRef = React.useRef<HTMLDivElement>(null);
@@ -256,15 +252,12 @@ const SelectContainer = <T,>(
   );
 };
 
-const Select = withStaticProps<
-  SelectStaticProps,
-  SelectProps<string | number | boolean>,
-  HTMLSelectElement
+const SelectForwardRef = React.forwardRef(SelectContainer) as <
+  T extends number | string | boolean,
 >(
-  React.forwardRef<HTMLSelectElement, SelectProps<string | number | boolean>>(
-    SelectContainer,
-  ),
-  __STATIC_PROPS,
-);
+  p: SelectProps<T> & { ref?: React.Ref<HTMLDivElement> },
+) => React.ReactElement;
+
+const Select = Object.assign(SelectForwardRef, __STATIC_PROPS);
 
 export default Select;
