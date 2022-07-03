@@ -155,7 +155,7 @@ ButtonIcon.args = {
 export const Link = Template.bind({});
 Link.args = {
   children: 'Redirect to Binyal',
-  href: 'https://github.com/Binh-NA/binyal',
+  href: 'https://www.npmjs.com/package/binyal',
   target: '_blank',
   size: Button.size.medium,
   type: undefined,
@@ -164,7 +164,7 @@ Link.args = {
 export const LinkOutline = Template.bind({});
 LinkOutline.args = {
   children: 'Redirect to Binyal',
-  href: 'https://github.com/Binh-NA/binyal',
+  href: 'https://www.npmjs.com/package/binyal',
   target: '_blank',
   size: Button.size.medium,
   type: undefined,

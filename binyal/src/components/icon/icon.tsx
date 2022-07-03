@@ -1,7 +1,15 @@
 import React from 'react';
-import Icons from '../../icon/icon.svg';
+import {
+  ArrowDown,
+  Close,
+  Star,
+  StarBorder,
+  Heart,
+  HeartBorder,
+  Info,
+} from './content';
 
-type IconSymbol =
+export type IconSymbol =
   | 'arrowDown'
   | 'close'
   | 'star'
@@ -10,26 +18,37 @@ type IconSymbol =
   | 'heartBorder'
   | 'info';
 
-const __ICON_IDS: Record<IconSymbol, string> = {
-  arrowDown: 'by-i-arrow-down',
-  close: 'by-i-close',
-  star: 'by-i-star',
-  starBorder: 'by-i-star-border',
-  heart: 'by-i-heart',
-  heartBorder: 'by-i-heart-border',
-  info: 'by-i-info',
-};
-
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
   symbol: IconSymbol;
 }
 
-const Icon = (props: IconProps): React.ReactElement => {
-  return (
-    <svg {...props} width={props.width ?? 20} height={props.height ?? 20}>
-      <use xlinkHref={`${Icons}#${__ICON_IDS[props.symbol]}`} />
-    </svg>
-  );
+const SwitchIcon = (props: IconProps): React.ReactElement => {
+  switch (props.symbol) {
+    case 'arrowDown':
+      return <ArrowDown {...props} />;
+    case 'close':
+      return <Close {...props} />;
+    case 'star':
+      return <Star {...props} />;
+    case 'starBorder':
+      return <StarBorder {...props} />;
+    case 'heart':
+      return <Heart {...props} />;
+    case 'heartBorder':
+      return <HeartBorder {...props} />;
+    case 'info':
+      return <Info {...props} />;
+    default:
+      return <></>;
+  }
 };
+
+const Icon = (props: IconProps): React.ReactElement => (
+  <SwitchIcon
+    {...props}
+    width={props.width ?? 20}
+    height={props.height ?? 20}
+  />
+);
 
 export default Icon;
