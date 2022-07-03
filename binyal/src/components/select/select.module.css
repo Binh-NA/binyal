@@ -9,6 +9,7 @@
   visibility: hidden;
   height: 0px;
   border: none;
+  -webkit-appearance: initial;
 }
 
 .content .s {

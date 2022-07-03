@@ -6,13 +6,14 @@ import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
+import svg from 'rollup-plugin-svg';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('./package.json');
 
 export default [
   {
-    input: 'src/index.ts',
+    input: ['src/index.ts'],
     output: [
       {
         file: packageJson.main,
@@ -33,6 +34,7 @@ export default [
       postcss(),
       terser(),
       image(),
+      svg(),
     ],
   },
   {

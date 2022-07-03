@@ -1,6 +1,6 @@
 {
   "name": "binyal",
-  "version": "0.0.32",
+  "version": "0.0.35",
   "description": "Design components for developers. Create an efficient and enjoyable work experience",
   "scripts": {
     "rollup": "rollup -c",
@@ -66,5 +66,8 @@
   "publishConfig": {
     "access": "public",
     "@Binh-NA:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "rollup-plugin-svg": "^2.0.0"
   }
 }
