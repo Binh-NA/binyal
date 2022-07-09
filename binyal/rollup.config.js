@@ -7,6 +7,8 @@ import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 import svg from 'rollup-plugin-svg';
+import autoprefixer from 'autoprefixer';
+import postcssNested from 'postcss-nested';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('./package.json');
@@ -31,7 +33,9 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      postcss(),
+      postcss({
+        plugins: [autoprefixer(), postcssNested()],
+      }),
       terser(),
       image(),
       svg(),
